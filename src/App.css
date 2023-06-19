@@ -8,11 +8,7 @@
   font-family: 'Architects Daughter', cursive;
 }
 
-.logoImg{
-  height: 200px;
-  width: 200px;
-  
-}
+
 
 
 
@@ -21,9 +17,6 @@
   font-weight: bolder;
 }
 
-.welcomeFN{
-  font-size:3em;
-}
 
 hr{
   border: 2px solid black;

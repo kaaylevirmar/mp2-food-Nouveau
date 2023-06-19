@@ -23,20 +23,20 @@ const Home = () => {
   
   return (
 
-  <div className=" flex bg-orange-300 pb-10 overflow-x-hidden" >
-      <div className="justify-self-center ">
+  <div className=" flex bg-orange-200 pb-10 overflow-x-hidden" >
+      <div className="justify-self-center w-screen">
         
-        <div className="text-center h-64">
+        <div className="text-center border h-64">
 
           <div className=" flex mt-10 justify-center">
-              <img src={logoImg} alt='This is a logo' className="logoImg"/>
-              <div className=" max-md:text-sm max-md:flex max-md:flex-col p-4">
-                <p className="welcomeFN">Welcome to <span className="logoFontFam">Food Nouveau</span></p>
+              <img src={logoImg} alt='This is a logo' className="h-20 w-20 sm:w-40 sm:h-40 md:w-40 md:h-40 2xl:h-52 2xl:w-52"/>
+              <div className="p-4">
+                <p className="text-sm 2xl:text-5xl">Welcome to <span className="logoFontFam">Food <span className="text-white">Nouveau</span></span></p>
                 <p className="md:text-base font-semibold pt-10">We serve you a lot of recipe here at our website.</p>
                 <p className="md:text-base font-semibold">We preferred also a lot of recipes around the world.</p>
                 
               </div>
-              <img src={logoImg} alt='This is a logo' className="logoImg"/>
+              <img src={logoImg} alt='This is a logo' className="h-20 w-20 sm:w-40 sm:h-40 md:w-40 md:h-40 2xl:h-52 2xl:w-52"/>
           </div>  
           {openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}/>}
         </div>
@@ -44,7 +44,7 @@ const Home = () => {
           <hr className=" w-[1000px]"/>
         </div>
         <div className="flex justify-center">
-          <div className="border-8 w-4/5 mt-10 bg-white/50 border-double border-black">
+          <div className="border-8 w-4/5 mt-10 bg-white border-double border-black">
             <RandomRecipe/>
         
             <FeaturedRecipes/>

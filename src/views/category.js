@@ -20,20 +20,33 @@ export default function Category({ category }) {
     setSelectedFood(null);
   };
 
-  
+  const [categoryFoodUrl, setCategoryFoodUrl] = useState("");
 
+
+  useEffect(()=> {
+    fetch(categoryFoodUrl)
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data.meals);
+      setCategoryInfo(data.meals);
+    })
+  },[categoryFoodUrl])
+  
   const toggleCategoryFood = async (catStage) => {
     setShowInfo(!showInfo);
     setSelectedFood(catStage);
-    try {
-      const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${catStage.idMeal}`
-      );
-      const data = await response.json();
-      setCategoryInfo(data.meals);
-    } catch (error) {
-      console.log("Error:", error);
-    }
+    setCategoryFoodUrl(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${catStage.idMeal}`)
+
+
+    // try {
+    //   const response = await fetch(
+    //     categoryFood
+    //   );
+    //   const data = await response.json();
+    //   setCategoryInfo(data.meals);
+    // } catch (error) {
+    //   console.log("Error:", error);
+    // }
   }
 
 
@@ -70,14 +83,14 @@ export default function Category({ category }) {
       });
   };
 
-
+const [url, setUrl] = useState(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`);
   
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`)
-      .then((response) => response.json())
-      .then((data) => setCategoryState(data.meals));
-      console.log(categoryStage);
-  }, []);
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setCategoryState(data.meals));
+      console.log(setUrl);
+  }, [url])
 
   return (
     <div className="">

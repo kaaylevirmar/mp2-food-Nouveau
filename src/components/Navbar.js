@@ -7,10 +7,10 @@ const Navbar = () => {
   return (
     <div className="navDiv">
       <nav className='flex justify-between bg-orange-500 text-white px-10 py-5 '>
-        <div>
+        <div className="flex items-center">
           <Link to='/' className="text-xl md:text-3xl 2xl:text-4xl font-black"><span className="text-black">Food </span><span>Nouveau</span></Link>
         </div>
-        <div className='right-4 top-4 sm:hidden'>
+        <div className='right-4 top-4 sm:hidden '>
           <button
             className=' focus:border-black'
             onClick={() => {
@@ -37,7 +37,7 @@ const Navbar = () => {
       </nav>
       {
       toggle && (
-        <div className='sm:hidden'>
+        <div >
           <div className='text-white justify-center flex flex-col items-center bg-orange-400'>
             <div className=' flex justify-center active:font-bold  py-3 '>
               <Link to='/' className="hover:bg-orange-300 p-1 rounded-lg">Home</Link>
