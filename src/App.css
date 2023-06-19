@@ -1,0 +1,119 @@
+
+.App {
+  text-align: center;
+}
+
+
+.navDiv{
+  font-family: 'Architects Daughter', cursive;
+}
+
+.logoImg{
+  height: 200px;
+  width: 200px;
+  
+}
+
+
+
+.logoFontFam{
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bolder;
+}
+
+.welcomeFN{
+  font-size:3em;
+}
+
+hr{
+  border: 2px solid black;
+}
+
+.sampleMenu{
+  font-family: 'Architects Daughter', cursive;
+}
+
+
+
+
+
+
+.shareRecipe{
+  font-family: 'Architects Daughter', cursive;
+}
+
+legend{
+  font-family: 'Architects Daughter', cursive;
+}
+
+
+
+.randomInfo{
+  top: 0;
+  left: 0;
+  
+}
+
+.foodInfo{
+  position: fixed;
+  
+}
+
+
+.searchText{
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
+}
+
+.homeModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  z-index: 1000;
+}
+
+.categoryText{
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
+}
+
+.categoryMainImg{
+  height: 200px;
+  width: 250px;
+}
+
+.homeSubscribe{
+  font-family: 'Architects Daughter', cursive;
+}
+
+.modalHome{
+  /* z-index: 1000; */
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.modalHomeEmail{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* footer{
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
+  text-align: center;
+} */
+
+
+.countryName{
+  font-family: 'Architects Daughter', cursive;
+}
+
+.favoriteDiv{
+  font-family: 'Architects Daughter', cursive;
+}
