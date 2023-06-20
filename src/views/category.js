@@ -27,16 +27,6 @@ export default function Category({ category }) {
     setCategoryFoodUrl(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${catStage.idMeal}`)
 
     
-    
-    // try {
-    //   const response = await fetch(
-    //     categoryFood
-    //   );
-    //   const data = await response.json();
-    //   setCategoryInfo(data.meals);
-    // } catch (error) {
-    //   console.log("Error:", error);
-    // }
   }
   const [categoryFoodUrl, setCategoryFoodUrl] = useState(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52959`);
 
