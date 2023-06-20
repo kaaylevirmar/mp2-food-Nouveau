@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import 'firebase/firestore';
-import db from "../firebase-config";
+
+import AddToFavoritesLocalStorage from "../components/AddToFavoritesLocalStorage";
 
 const RandomRecipe = () => {
 
@@ -14,43 +15,10 @@ const RandomRecipe = () => {
         .then((data) => getFoodApi1(data.meals));
     }, []);
 
-    const [favoriteSend, setFavoriteSend] = useState(false);
-    const [favoriteAlready, setFavoriteAlready] = useState(false);
     
-    const [addFavorite, setAddFavorite] = useState('');
+    
 
-    const handleAddToFirestore = (data) => {
-        db.collection('favorites')
-          .where('idMeal', '==', data.idMeal)
-          .get()
-          .then((querySnapshot) => {
-            if (querySnapshot.empty) {
-              // Item doesn't exist, add it to favorites
-              db.collection('favorites').add(data)
-                .then(() => {
-                  setFavoriteSend(true)
-                  setAddFavorite(data.strMeal)
-                  setTimeout(()=> {
-                    setFavoriteSend(false)
-                  },2000)
-                })
-                .catch((error) => {
-                  console.error('Error adding item to favorites:', error);
-                });
-            } else {
-              setFavoriteAlready(true);
-              setAddFavorite(data.strMeal)
-              setTimeout(()=> {
-                setFavoriteAlready(false)
-              },2000)
-            }
-          })
-          .catch((error) => {
-            console.error('Error checking item in favorites:', error);
-          });
-      };
-
-
+  
 
 
 // ====================================================2nd Random
@@ -117,7 +85,7 @@ const RandomRecipe = () => {
                                                 <h1 className="text-4xl">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
-                                                <button onClick={()=>{ handleAddToFirestore(food)}} className=" ml-5 p-1 mt-1 px-3 rounded-full hover:bg-orange-600  hover:text-white bg-orange-500 font-bold mb-1">  Add to favorites</button>
+                                               <AddToFavoritesLocalStorage data={food}/>
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -200,7 +168,7 @@ const RandomRecipe = () => {
                                                 <h1 className="text-4xl">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
-                                                <button onClick={()=>{ handleAddToFirestore(food)}} className=" ml-5 p-1 mt-1 px-3 rounded-full hover:bg-orange-600  hover:text-white bg-orange-500 font-bold mb-1">  Add to favorites</button>
+                                            <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -280,7 +248,7 @@ const RandomRecipe = () => {
                                                 <h1 className="text-4xl">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
-                                                <button onClick={()=>{ handleAddToFirestore(food)}} className=" ml-5 p-1 mt-1 px-3 rounded-full hover:bg-orange-600  hover:text-white bg-orange-500 font-bold mb-1">  Add to favorites</button>
+                                            <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -360,7 +328,7 @@ const RandomRecipe = () => {
                                                 <h1 className="text-4xl">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
-                                                <button onClick={()=>{ handleAddToFirestore(food)}} className=" ml-5 p-1 mt-1 px-3 rounded-full hover:bg-orange-600  hover:text-white bg-orange-500 font-bold mb-1">  Add to favorites</button>
+                                            <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -417,18 +385,8 @@ const RandomRecipe = () => {
                         </div>
                     ))}
                 </div>
-                {favoriteSend && (
-                <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-                <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully add {addFavorite} to your favorite.</div>
-                </div>
-                )}
-                {favoriteAlready && (
-                    <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-                        <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>
-                            {addFavorite} is already in favorites.
-                        </div>
-                    </div>
-                )}
+            
+           
             </div>
             
         </div>
