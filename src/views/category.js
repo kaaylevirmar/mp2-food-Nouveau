@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import 'firebase/firestore';
 import db from "../firebase-config";
 
+
 export default function Category({ category }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [categoryStage, setCategoryState] = useState([]);
+  const [categoryStage, setCategoryStage] = useState([]);
   const [categoryInfo, setCategoryInfo] = useState([]);
 
   const [showInfo, setShowInfo] = useState(false);
@@ -20,24 +21,13 @@ export default function Category({ category }) {
     setSelectedFood(null);
   };
 
-  const [categoryFoodUrl, setCategoryFoodUrl] = useState("");
-
-
-  useEffect(()=> {
-    fetch(categoryFoodUrl)
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data.meals);
-      setCategoryInfo(data.meals);
-    })
-  },[categoryFoodUrl])
-  
   const toggleCategoryFood = async (catStage) => {
     setShowInfo(!showInfo);
     setSelectedFood(catStage);
     setCategoryFoodUrl(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${catStage.idMeal}`)
 
-
+    
+    
     // try {
     //   const response = await fetch(
     //     categoryFood
@@ -48,6 +38,20 @@ export default function Category({ category }) {
     //   console.log("Error:", error);
     // }
   }
+  const [categoryFoodUrl, setCategoryFoodUrl] = useState(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52959`);
+
+
+ 
+  useEffect(() => {    
+    fetch(categoryFoodUrl)
+    .then(response => response.json())
+    .then(data => {
+      setCategoryInfo(data.meals);
+    });
+   
+  },[categoryFoodUrl]);
+  
+  
 
 
   const addToFavorites = (item) => {
@@ -83,13 +87,15 @@ export default function Category({ category }) {
       });
   };
 
-const [url, setUrl] = useState(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`);
+const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`;
   
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(data => setCategoryState(data.meals));
-      console.log(setUrl);
+      .then(data => {
+        setCategoryStage(data.meals)
+        });
+      
   }, [url])
 
   return (

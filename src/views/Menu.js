@@ -501,7 +501,7 @@ const AmericanFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('America');
   setCountryFlag(`${AmericaFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
   
   
 }
@@ -519,7 +519,7 @@ const BritishFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('British');
   setCountryFlag(`${BritishFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const CanadaFlagButton = async() =>{
@@ -535,7 +535,7 @@ const CanadaFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Canada');
   setCountryFlag(`${CanadianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const ChineseFlagButton = async() =>{
@@ -550,7 +550,7 @@ const ChineseFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('China');
   setCountryFlag(`${ChineseFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const CroatianFlagButton = async() =>{
@@ -565,7 +565,7 @@ const CroatianFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Croatia');
   setCountryFlag(`${CroatianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const DuctchFlagButton = async() =>{
@@ -580,7 +580,7 @@ const DuctchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Netherlands');
   setCountryFlag(`${DutchFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const EgyptianFlagButton = async() =>{
@@ -595,7 +595,7 @@ const EgyptianFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Egypt');
   setCountryFlag(`${EgyptianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const PhilippineFlagButton = async() =>{
@@ -610,7 +610,7 @@ const PhilippineFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Philippines');
   setCountryFlag(`${PhilippineFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
 }
 
 const FrenchFlagButton = async() =>{
@@ -625,7 +625,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('France');
   setCountryFlag(`${FrenchFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
  
  const GreekFlagButton = async() =>{
@@ -640,7 +640,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Greece');
   setCountryFlag(`${GreekFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const IndianFlagButton = async() =>{
@@ -655,7 +655,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('India ');
   setCountryFlag(`${IndianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const IrishFlagButton = async() =>{
@@ -670,7 +670,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Ireland');
   setCountryFlag(`${IrishFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const ItalianFlagButton = async() =>{
@@ -685,7 +685,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Italy');
   setCountryFlag(`${ItalianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const JamaicanFlagButton = async() =>{
@@ -700,7 +700,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Jamaica');
   setCountryFlag(`${JamaicanFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const JapaneseFlagButton = async() =>{
@@ -715,7 +715,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Japan');
   setCountryFlag(`${JapanFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const KenyanFlagButton = async() =>{
@@ -730,7 +730,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Kenya');
   setCountryFlag(`${KenyaFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const MalasianFlagButton = async() =>{
@@ -745,7 +745,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Malaysia');
   setCountryFlag(`${MalasiaFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const MexicanFlagButton = async() =>{
@@ -760,7 +760,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Mexico');
   setCountryFlag(`${MexicoFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
  
  const MoroccanFlagButton = async() =>{
@@ -775,7 +775,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Morocco');
   setCountryFlag(`${MoroocanFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const PolishFlagButton = async() =>{
@@ -790,7 +790,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Poland');
   setCountryFlag(`${PolishFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const PortugueseFlagButton = async() =>{
@@ -805,7 +805,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Portugal');
   setCountryFlag(`${PortugueseFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const RussianFlagButton = async() =>{
@@ -820,7 +820,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Russia');
   setCountryFlag(`${RussianFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const SpanishFlagButton = async() =>{
@@ -835,7 +835,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Spain');
   setCountryFlag(`${SpanishFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const ThaiFlagButton = async() =>{
@@ -850,7 +850,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Thailand');
   setCountryFlag(`${ThaiFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const TunisianFlagButton = async() =>{
@@ -865,7 +865,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Tunisia');
   setCountryFlag(`${Tunisian}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const TurkishFlagButton = async() =>{
@@ -880,7 +880,7 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Turkey');
   setCountryFlag(`${TurkishFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
  const VietnamFlagButton = async() =>{
@@ -895,11 +895,11 @@ const FrenchFlagButton = async() =>{
   setCountryDiv(false);
   setCountryCode('Vietnam');
   setCountryFlag(`${VietnamFlag}`);
-  window.scrollTo({top:0, left:0 ,behavior: 'smooth'});
+  window.scrollTo({top:0, left:0 ,behavior: 'instant'});
  }
 
   return (
-    <div className='flex flex-col menuBg bg-orange-200 overflow-x-hidden'>
+    <div className='flex flex-col w-full bg-orange-200'>
       <div className='flex justify-center'>
         <div className='flex flex-col mt-5 w-11/12 md:w-4/5 2xl:w-3/5 text-center'>
           <p className='text-[18px] md:text-3xl 2xl:text-4xl text-black align-self-center searchText'>
@@ -911,6 +911,7 @@ const FrenchFlagButton = async() =>{
                 <input type='search'name='search'id='search'className='rounded-l-lg pl-2'
                 onChange={HandleChangeFoodSearch}
                 value={foodSearch}
+                placeholder="Search..."
                 />
                 <button className='text-black'><img src={SearchIcon} alt="Search logo" className="button bg-orange-600 w-7 h-7  rounded-r-lg" /></button>
             </div>
@@ -922,7 +923,7 @@ const FrenchFlagButton = async() =>{
       </div>
       
       {countryDiv ?(
-        <div className='flex w-screen mt-10 justify-center menuMainDiv overflow-y-hidden '>
+        <div className='flex w-full mt-10 justify-center menuMainDiv '>
            
           {isHidden ? (
             <div className='flex flex-wrap gap-16 md:gap-10 min-[360px]:gap-5 2xl:gap-20 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10'>
@@ -951,8 +952,19 @@ const FrenchFlagButton = async() =>{
                     </div>
                   </div>
                   {popupInfoApi1 && (
-                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                      <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="flex justify-between text-white my-1 ">
+                        Recipe Info
+                        <button
+                          className='hover:bg-orange-100 rounded-full font-bold '
+                          onClick={() => {
+                            setPopupInfoApi1(false);
+                            }}>
+                          <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                      </div>
+                      <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                         <div className="flex justify-between mt-5">
                           <div className="w-8/12 self-end">
                             <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1017,16 +1029,9 @@ const FrenchFlagButton = async() =>{
                             alt='Food_Picture_Search'
                           />
                         </div>
-                        <div>
-                          <button
-                            className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                            onClick={() => {setPopupInfoApi1(false)}}>
-                            <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                        </button>
-                        </div>
                         </div>
                       </div>
-                      
+                    </div> 
                     </div>
                   )}
                 </div>
@@ -1057,7 +1062,19 @@ const FrenchFlagButton = async() =>{
                   </div>
                   {popupInfoApi2 && (
                     <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                      <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                      <div className="flex justify-between text-white my-1 ">
+                          Recipe Info
+                          <button
+                            className='hover:bg-orange-100 rounded-full font-bold '
+                            onClick={() => {
+                              setPopupInfoApi2(false);
+                            }}>
+                            <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                          </button>
+                      </div>
+                      <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                        
                         <div className="flex justify-between mt-5">
                           <div className="w-8/12 self-end">
                             <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1122,18 +1139,10 @@ const FrenchFlagButton = async() =>{
                             alt='Food_Picture_Search'
                           />
                         </div>
-                        <div>
-                          <button
-                            className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                            onClick={() => {
-                              setPopupInfoApi2(false);
-                              }}>
-                            <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                        </button>
-                        </div>
+                      
                         </div>
                       </div>
-                      
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1164,8 +1173,19 @@ const FrenchFlagButton = async() =>{
                   </div>
 
                   {popupInfoApi3 && (
-                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                    <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="flex justify-between text-white my-1 ">
+                          Recipe Info
+                          <button
+                            className='hover:bg-orange-100 rounded-full font-bold '
+                            onClick={() => {
+                              setPopupInfoApi3(false);
+                            }}>
+                            <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                          </button>
+                      </div>
+                      <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                       <div className="flex justify-between mt-5">
                         <div className="w-8/12 self-end">
                           <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1230,18 +1250,10 @@ const FrenchFlagButton = async() =>{
                             alt='Food_Picture_Search'
                           />
                         </div>
-                        <div>
-                          <button
-                            className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                            onClick={() => {
-                              setPopupInfoApi3(false);
-                              }}>
-                            <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                        </button>
-                        </div>
+                        
                         </div>
                       </div>
-                      
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1272,8 +1284,19 @@ const FrenchFlagButton = async() =>{
                   </div>
 
                   {popupInfoApi4 && (
-                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                    <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]"> 
+                    <div className="flex justify-between text-white my-1 ">
+                          Food Info
+                          <button
+                            className='hover:bg-orange-100 rounded-full font-bold '
+                            onClick={() => {
+                              setPopupInfoApi4(false);
+                            }}>
+                            <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                          </button>
+                      </div>
+                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                       <div className="flex justify-between mt-5">
                         <div className="w-8/12 self-end">
                           <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1338,18 +1361,10 @@ const FrenchFlagButton = async() =>{
                             alt='Food_Picture_Search'
                           />
                         </div>
-                        <div>
-                          <button
-                            className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                            onClick={() => {
-                              setPopupInfoApi4(false);
-                              }}>
-                            <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                        </button>
-                        </div>
+                        
                         </div>
                       </div>
-                      
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1381,7 +1396,18 @@ const FrenchFlagButton = async() =>{
 
                 {popupInfoApi5 && (
                   <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                  <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                  <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="flex justify-between text-white my-1 ">
+                          Recipe Info
+                          <button
+                            className='hover:bg-orange-100 rounded-full font-bold '
+                            onClick={() => {
+                              setPopupInfoApi5(false);
+                            }}>
+                            <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                          </button>
+                      </div>
+                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                     <div className="flex justify-between mt-5">
                       <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1446,18 +1472,10 @@ const FrenchFlagButton = async() =>{
                           alt='Food_Picture_Search'
                         />
                       </div>
-                      <div>
-                        <button
-                          className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                          onClick={() => {
-                            setPopupInfoApi5(false);
-                            }}>
-                          <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                      </button>
-                      </div>
+                      
                       </div>
                     </div>
-                    
+                  </div>
                   </div>
                 )}
               </div>
@@ -1489,7 +1507,18 @@ const FrenchFlagButton = async() =>{
 
                 {popupInfoApi6 && (
                   <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                  <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                  <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="flex justify-between text-white my-1 ">
+                          Recipe Info
+                          <button
+                            className='hover:bg-orange-100 rounded-full font-bold '
+                            onClick={() => {
+                              setPopupInfoApi6(false);
+                            }}>
+                            <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                          </button>
+                      </div>
+                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                     <div className="flex justify-between mt-5">
                       <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1554,18 +1583,10 @@ const FrenchFlagButton = async() =>{
                           alt='Food_Picture_Search'
                         />
                       </div>
-                      <div>
-                        <button
-                          className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                          onClick={() => {
-                            setPopupInfoApi6(false);
-                            }}>
-                          <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                      </button>
-                      </div>
+                     
                       </div>
                     </div>
-                    
+                    </div>
                   </div>
                 )}
               </div>
@@ -1597,7 +1618,18 @@ const FrenchFlagButton = async() =>{
 
                 {popupInfoApi7 && (
                   <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                  <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                  <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                  <div className="flex justify-between text-white my-1 ">
+                        Recipe Info
+                        <button
+                          className='hover:bg-orange-100 rounded-full font-bold '
+                          onClick={() => {
+                            setPopupInfoApi7(false);
+                            }}>
+                          <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                        </div>
+                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                     <div className="flex justify-between mt-5">
                       <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1662,18 +1694,10 @@ const FrenchFlagButton = async() =>{
                           alt='Food_Picture_Search'
                         />
                       </div>
-                      <div>
-                        <button
-                          className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                          onClick={() => {
-                            setPopupInfoApi7(false);
-                            }}>
-                          <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                      </button>
-                      </div>
+                      
                       </div>
                     </div>
-                    
+                    </div>  
                   </div>
                 )}
               </div>
@@ -1691,8 +1715,6 @@ const FrenchFlagButton = async() =>{
                       {food.strMeal}
                     </div>
                   </div>
-               
-                  
                 </div>
                 <div>
                   <div className="justify-center flex" onClick={()=>{ setPopupInfoApi8(true)}}>
@@ -1705,7 +1727,19 @@ const FrenchFlagButton = async() =>{
 
                 {popupInfoApi8 && (
                 <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                  <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]" >
+                  <div className="flex justify-between text-white my-1 ">
+                      Recipe Info
+                      <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={() => {
+                        setPopupInfoApi8(false);
+                        }}>
+                      <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                    </div>
+                <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                  
                     <div className="flex justify-between mt-5">
                       <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1770,18 +1804,11 @@ const FrenchFlagButton = async() =>{
                           alt='Food_Picture_Search'
                         />
                       </div>
-                      <div>
-                        <button
-                          className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                          onClick={() => {
-                            setPopupInfoApi8(false);
-                            }}>
-                          <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                        </button>
-                      </div>
+                      
                     </div>
+                  
                   </div>
-                    
+                </div> 
                 </div>
                 )}
               </div>
@@ -1791,7 +1818,7 @@ const FrenchFlagButton = async() =>{
             </div>
           ) :
           (
-            <div className='flex flex-wrap  w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 md:mb-10 sm:mb-10 min-[360px]:mb-10 '>
+            <div className='flex flex-wrap 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 md:mb-10 sm:mb-10 min-[360px]:mb-10 '>
               {/* ========================SEARCH INFO DIV */}
 
               {notFound ? (
@@ -1819,7 +1846,16 @@ const FrenchFlagButton = async() =>{
                 
                 {showInfo && selectedFood === food && ( 
                   <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'> 
-                  <div className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                  <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                  <div className="flex justify-between text-white my-1 ">
+                      Food Info
+                      <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={closePopup}>
+                      <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                    </div>
+                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                     <div className="flex justify-between mt-5">
                       <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -1857,7 +1893,7 @@ const FrenchFlagButton = async() =>{
                       <p className="2xl:my-1"><span className="font-bold">{food.strIngredient19}</span> {food.strMeasure19}</p>
                       <p className="2xl:my-1"><span className="font-bold">{food.strIngredient20}</span> {food.strMeasure20}</p>
                     </div>
-                  </div>
+                    </div>
                     <div>
                     <h3 className="text-lg pt-5">
                       <strong>Instructions:</strong>
@@ -1884,16 +1920,10 @@ const FrenchFlagButton = async() =>{
                         alt='Food_Picture_Search'
                       />
                     </div>
-                    <div>
-                      <button
-                        className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                        onClick={closePopup}>
-                        <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                    </button>
-                    </div>
+                  
                     </div>
                   </div>
-                  
+                  </div>
                 </div>
               )}
             </div>
@@ -1912,7 +1942,7 @@ const FrenchFlagButton = async() =>{
         </div>
         ):(
           //------------------------------------------ Country Division
-          <div className=" w-screen">
+          <div className=" w-full">
 
             <div className="flex flex-wrap justify-center items-center my-5 md:my-8 2xl:my-10 ">
               <p className="text-xl md:text-2xl 2xl:text-3xl mr-5 countryName font-bold ">{countryCode}</p>
@@ -1942,7 +1972,18 @@ const FrenchFlagButton = async() =>{
                 {showInfo && selectedFood === food && (
                   <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
                     {countryFoodDiv.map((countryFood)=>
-                    <div key={countryFood.idMeal} className='p-5 2xl:top-[5%] 2xl:left-[12%] inline-block w-screen h-screen 2xl:w-9/12 2xl:h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto sm:top-0 sm:left-0 2xl:rounded-md'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                      <div className="flex justify-between text-white my-1 ">
+                      Recipe Info
+                      <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={() => {
+                          setShowInfo(false);
+                        }}>
+                      <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                    </div>
+                    <div key={countryFood.idMeal} className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                       <div className="flex justify-between mt-5">
                         <div className="w-8/12 self-end">
                         <h1 className="text-2xl 2xl:text-4xl">{countryFood.strMeal}</h1>
@@ -2008,19 +2049,12 @@ const FrenchFlagButton = async() =>{
                           alt='Food_Picture_Search'
                         />
                       </div>
-                      <div>
-                        <button
-                          className='absolute top-2 right-2 p-1  hover:bg-orange-100 rounded-full font-bold '
-                          onClick={() => {
-                            setShowInfo(false);
-                            }}>
-                          <img src={Closebutton} alt="close button" className="border rounded-full w-8 h-8 hover:border-black"/> 
-                      </button>
-                      </div>
+                      
                       </div>
                     </div>
+                    </div>
                     )}
-
+                  
                   </div>
                   )}
                 </div>
