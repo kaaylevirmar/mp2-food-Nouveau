@@ -1,6 +1,8 @@
 import React from "react";
 import 'firebase/firestore';
 import db from "../firebase-config";
+import AddToFavoritesLocalStorage from "../components/AddToFavoritesLocalStorage";
+
 
 import { useState, useEffect } from "react";
 import AmericaFlag from '../images/american.png';
@@ -37,6 +39,7 @@ import GreaterThan from '../images/icons8-greater-than-50.png';
 
 
 
+
 const Menu = () => {
   const [favoriteSend, setFavoriteSend] = useState(false);
   const [addFavorite, setAddFavorite] = useState('');
@@ -47,36 +50,7 @@ const Menu = () => {
   const [foodApi1, getFoodApi1] = useState([]);
   const [popupInfoApi1, setPopupInfoApi1] = useState(false);
  // --------------------------add to favorites
-const handleAddToFirestore1 = (data) => {
-  db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-};
+
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -89,36 +63,7 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi2, getFoodApi2] = useState([]);
   const [popupInfoApi2, setPopupInfoApi2] = useState(false);
 // --------------------------add to favorites
-  const handleAddToFirestore2 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+  
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -130,36 +75,7 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi3, getFoodApi3] = useState([]);
   const [popupInfoApi3, setPopupInfoApi3] = useState(false);
   // --------------------------add to favorites
-  const handleAddToFirestore3 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -171,36 +87,7 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi4, getFoodApi4] = useState([]);
   const [popupInfoApi4, setPopupInfoApi4] = useState(false);
 // --------------------------add to favorites
-  const handleAddToFirestore4 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+  
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
@@ -211,36 +98,7 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi5, getFoodApi5] = useState([]);
   const [popupInfoApi5, setPopupInfoApi5] = useState(false);
   // --------------------------add to favorites
-  const handleAddToFirestore5 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+  
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
@@ -251,36 +109,7 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi6, getFoodApi6] = useState([]);
   const [popupInfoApi6, setPopupInfoApi6] = useState(false);
   // --------------------------add to favorites
-  const handleAddToFirestore6 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+  
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
@@ -290,37 +119,7 @@ const handleAddToFirestore1 = (data) => {
   //-------------------------- 7th random recipe
   const [foodApi7, getFoodApi7] = useState([]);
   const [popupInfoApi7, setPopupInfoApi7] = useState(false);
-  // --------------------------add to favorites
-  const handleAddToFirestore7 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+ 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
@@ -331,42 +130,14 @@ const handleAddToFirestore1 = (data) => {
   const [foodApi8, getFoodApi8] = useState([]);
   const [popupInfoApi8, setPopupInfoApi8] = useState(false);
   // --------------------------add to favorites
-  const handleAddToFirestore8 = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setAddFavorite(data.strMeal)
-            setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
       .then((data) => getFoodApi8(data.meals));
   }, []);
 
+
+ 
   // -------------------------- Search
   const [foodSearch, setFoodSearch] = useState("");
   const [getFoodApi, setGetFoodApi] = useState([]);
@@ -958,7 +729,9 @@ const FrenchFlagButton = async() =>{
                             <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                           </div>
                           <div className="self-end ">
-                            <button onClick={()=>{ handleAddToFirestore1(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+
+                            <AddToFavoritesLocalStorage data={food}/>
+                            {/* <button onClick={()=>{ props.addToFavorites(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button> */}
                           </div>
                         </div>
                         <hr></hr>
@@ -1063,7 +836,7 @@ const FrenchFlagButton = async() =>{
                             <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                           </div>
                           <div className="self-end ">
-                            <button onClick={()=>{ handleAddToFirestore2(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                            <AddToFavoritesLocalStorage data={food}/>
                           </div>
                         </div>
                         <hr></hr>
@@ -1171,7 +944,7 @@ const FrenchFlagButton = async() =>{
                           <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                         </div>
                         <div className="self-end ">
-                          <button onClick={()=>{ handleAddToFirestore3(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                        <AddToFavoritesLocalStorage data={food}/>
                         </div>
                         </div>
                         <hr></hr>
@@ -1279,7 +1052,7 @@ const FrenchFlagButton = async() =>{
                           <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                         </div>
                         <div className="self-end ">
-                          <button onClick={()=>{ handleAddToFirestore4(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                        <AddToFavoritesLocalStorage data={food}/>
                         </div>
                         </div>
                         <hr></hr>
@@ -1387,7 +1160,7 @@ const FrenchFlagButton = async() =>{
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                       </div>
                       <div className="self-end ">
-                        <button onClick={()=>{ handleAddToFirestore5(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                      <AddToFavoritesLocalStorage data={food}/>
                       </div>
                       </div>
                       <hr></hr>
@@ -1495,7 +1268,7 @@ const FrenchFlagButton = async() =>{
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                       </div>
                       <div className="self-end ">
-                        <button onClick={()=>{ handleAddToFirestore6(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                      <AddToFavoritesLocalStorage data={food}/>
                       </div>
                       </div>
                       <hr></hr>
@@ -1603,7 +1376,7 @@ const FrenchFlagButton = async() =>{
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                       </div>
                       <div className="self-end ">
-                        <button onClick={()=>{ handleAddToFirestore7(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                      <AddToFavoritesLocalStorage data={food}/>
                       </div>
                       </div>
                       <hr></hr>
@@ -1711,7 +1484,7 @@ const FrenchFlagButton = async() =>{
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                       </div>
                       <div className="self-end ">
-                        <button onClick={()=>{ handleAddToFirestore8(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                      <AddToFavoritesLocalStorage data={food}/>
                       </div>
                     </div>
                     <hr></hr>
@@ -1825,7 +1598,7 @@ const FrenchFlagButton = async() =>{
                         <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
                       </div>
                       <div className="self-end ">
-                        <button onClick={()=>{ handleAddToFirestoreSearch(food)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/></button>
+                      <AddToFavoritesLocalStorage data={food}/>
                       </div>
                     </div>
                     <hr></hr>

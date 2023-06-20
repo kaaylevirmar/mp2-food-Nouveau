@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import db from "../firebase-config"
+
 
 
 const Favorites = () => {
   const [data, setData] = useState([]);
+ 
   const [showInfo, setShowInfo] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
 
@@ -19,37 +20,54 @@ const Favorites = () => {
   };
 
 
-    useEffect(() => {
-      // Retrieve the data from Firestore
-      db.collection("favorites").get().then(querySnapshot => {
-        const documents = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setData(documents);
-      });
-    }, []);
+  useEffect(() => {
+    // Load favorites from local storage when the component mounts
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setData(JSON.parse(storedFavorites));
+    }
+  }, []);
+
+
+    // useEffect(() => {
+    //   // Retrieve the data from Firestore
+    //   db.collection("favorites").get().then(querySnapshot => {
+    //     const documents = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    //     setData(documents);
+    //   });
+    // }, []);
 
 
   const[favoriteDelete, setFavoriteDelete] = useState(false)
  
 
     const handleDeleteYes = (id) => {
+
+     const fitered = data.filter((data)=>{
+      return data !== id;
+     })
+
+     setData(fitered);
+        
+        
+      setFavoriteDelete(true);
+      setTimeout(()=> {
+      setFavoriteDelete(false);
+    }, 2000);
+    
+    // Update state or trigger a re-render if needed
      
       // Delete the document with the specified ID
-      db.collection("favorites").doc(id).delete().then(() => {
-        // Update the data state to reflect the deletion
-        const updatedData = data.filter(item => item.id !== id);
-        setData(updatedData);
+      // db.collection("favorites").doc(id).delete().then(() => {
+      //   // Update the data state to reflect the deletion
+      //   const updatedData = data.filter(item => item.id !== id);
+      //   setData(updatedData);
 
-        setDeleteAlert(false);
-        
-        
-        setFavoriteDelete(true);
-        setTimeout(()=> {
-        setFavoriteDelete(false);
-      }, 2000);
+      
 
-      }).catch(error => {
-        console.error("Error deleting document: ", error);
-      });
+      // }).catch(error => {
+      //   console.error("Error deleting document: ", error);
+      // });
     
     
     };
@@ -83,9 +101,9 @@ const Favorites = () => {
     
       <div className='flex justify-center mt-5 '>
         <div className="flex flex-wrap gap-20 p-20 w-4/5 border-8 justify-center bg-white/50 border-double border-black">
-          {data.map((food) => ( 
+          {data.map((food,index) => ( 
             
-            <div key={food.id} className='w-52 h-80'>
+            <div key={food.idMeal} className='w-52 h-80'>
               <div>
                 <img className='w-52 h-52 rounded-lg' src={food.strMealThumb} alt='food'/>
                 <div className='h-16 flex justify-center'>
@@ -111,7 +129,7 @@ const Favorites = () => {
                   <div className='w-96 h-68 bg-black/90 p-6 drop-shadow-2xl rounded text-center modalHomeEmail'>
                     Do you want to delete {food.strMeal} on favorite?
                       <div className='flex justify-center gap-20 mt-10'>
-                        <button onClick={() => handleDeleteYes(food.id)}>Yes</button> 
+                        <button onClick={() => handleDeleteYes(index)}>Yes</button> 
                         <button onClick={() =>  setDeleteAlert(false)}>No</button>
                       </div>
                   </div>
