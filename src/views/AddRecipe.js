@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import db from "../firebase-config";
 import firebase from "firebase/compat/app";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
+import SendIcon from '../images/icons8-paper-plane-50.png';
 
 
 
@@ -56,14 +57,44 @@ const AddRecipe = () => {
 
   const [addSuccess, setAddSuccess] = useState(false);
   
+  // Food Name Validation
+  const [nullFoodName, setNullFoodName ] = useState(false);
+  const foodNameNotNull = (() =>{
+    if(foodName !== "")
+    {
+      setNullFoodName(false);
+    }
+  });
+
+  // Food Country Validation
+  const [nullFoodCountry, setNullFoodCountry] = useState(false);
+  const foodCountryNotNull = (()=>{
+    if(foodCountry !=="")
+    {
+      setNullFoodCountry(false);
+    }
+  });
+
+  //Food Category Validation
+  const [nullFoodCategory , setNullFoodCategory] = useState(false);
+  const foodCategoryNotNull = (()=>{
+    if(foodCategory !==""){
+      setNullFoodCategory(false);
+    }
+  });
+
+ 
   const addList = async (event) => {
     
+    foodCountryNotNull();
+    foodCategoryNotNull();
+    foodNameNotNull();
     if(foodName === ""){
-      alert("Food Name is required.");
+      setNullFoodName(true);
     }else if(foodCountry ===""){
-      alert("Please select country.");
+      setNullFoodCountry(true);
     }else if(foodCategory === "") {
-      alert("Please select category.");
+      setNullFoodCategory(true);
     }else if(foodIngredients ===""){
       alert("Ingredients is required.");
     }else if(foodSummary ===""){
@@ -138,39 +169,51 @@ const AddRecipe = () => {
 
 
   return (
-    <div className='flex justify-center w-[1600px] bg-orange-300'>
+    <div className='flex justify-center w-full bg-orange-200'>
 
-      <div className=' flex flex-col items-center gap-5 '>
-
-        <h1 className='text-5xl pt-10 font-bold shareRecipe'>
+      <div className=' flex justify-center w-full '>
+        <div className="w-full">
+      
+        <h1 className='2xl:text-5xl md:text-4xl sm:text-3xl text-2xl pt-10 font-bold shareRecipe text-center'>
           Share Your Recipe
         </h1>
-
-        <hr className='px-96 mt-10'></hr>
-
-        <div className='grid p-5 mt-10 bg-white/50 mb-10'>
-
-          <fieldset className='border-4 border-black p-10'>
-
-            <legend className='text-xl font-bold p-2 '>Your Recipe</legend>
-
-            <div className='pb-2 flex justify-center '>
+        <div className="flex justify-center ">
+          <hr className=' mt-5 w-[80%]'/>
+        </div> 
+        <div className="flex justify-center">
+        <div className='p-2 md:p-3 mt-10 bg-white/50 w-full lg:w-[40%] sm:w-[60%] xl:w-[35%] 2xl:w-[30%] border border-black mb-10'>
+     
+          <fieldset className="border p-2 lg:p-5 sm:p-4 border-black">
+            <legend className="font-bold">Your recipe</legend>
+            <div>
+            <div className=' flex justify-between '>
               {/*-------------------- Food Name */}
-              <label htmlFor='foodName' className='mt-2 ml-2 font-semibold'>
+              <div className="self-center">
+              <label htmlFor='foodName' className='text-sm md:base font-semibold'>
                 Food Name:
               </label>
-              <div className='ml-7 mt-2'>
-                <input id='foodName' name='foodName'  value={foodName} onChange={handleSubmitfoodName} />
+              </div>
+              <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
+                {nullFoodName && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+                <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
               </div>
             </div>
-
+            {nullFoodName && 
+              <div className="flex justify-end">
+                <span className="text-xs w-[64.5%] text-center text-red-400">--Please enter food name--</span>
+              </div>
+            }
+            </div>
             {/*------------------------ Food Country */}
-
-            <div className=' pb-2 flex mt-2 justify-center'>
-              <label className='mt-2 ml-2 font-semibold'>Country:</label>
-              <div className='ml-14 mt-2'>
-                <select value={foodCountry} name="foodCountry" onChange={handleSubmitfoodCountry}>
-                  <option value="selectCountry">Select Country</option>
+            <div>
+            <div className='flex justify-between mt-2'>
+              <div>
+              <label className='font-semibold text-sm md:base'>Country:</label>
+              </div>
+              <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
+              {nullFoodCountry && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+                <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" onChange={handleSubmitfoodCountry}>
+                  <option >Select Country</option>
                   {getCountry.map((counrty) => (
                     <option key={counrty.strArea} value={counrty.strArea}> 
                       {counrty.strArea}
@@ -178,35 +221,48 @@ const AddRecipe = () => {
                 </select>
               </div>
             </div> 
-                    
-
-            {/*------------------------------Food Category */}
-            <div className=" pb-2 flex mt-2 justify-center">
-              <label className="mt-2 ml-2 font-semibold" >Food Category:</label>
-              <div className="ml-2 mt-2">
-                <select value={foodCategory} name="foodCategory" onChange={handleSubmitfoodCategory} id="selectCategory">
-                  <option>Select Category</option>
-                  {getCategory.map(setCategory =>(
-                    <option key={setCategory.idCategory} value={setCategory.strCategory}>  {setCategory.strCategory}</option>
-
-                  ))}
-                </select>
+            {nullFoodCountry && 
+              <div className="flex justify-end">
+                <span className="text-xs w-[64.5%] text-center text-red-400">--Please select Country--</span>
               </div>
+            }        
             </div>
-
-            
-            <hr className='mt-5'></hr>
+            {/*------------------------------Food Category */}
+            <div>
+              <div className=" flex mt-2 justify-between">
+                <div>
+                  <label className="font-semibold text-sm">Food Category:</label>
+                </div>
+                <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
+                  {nullFoodCategory && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+                  <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm border border-zinc-300 rounded" value={foodCategory} name="foodCategory" onChange={handleSubmitfoodCategory} id="selectCategory" placeholder="Select cat">
+                    <option >Select Category</option>
+                      {getCategory.map(setCategory =>(
+                      <option key={setCategory.idCategory} value={setCategory.strCategory}>  {setCategory.strCategory}</option>
+                      ))}
+                  </select>
+                </div>
+              </div>
+              {nullFoodCategory && 
+              <div className="flex justify-end">
+                <span className="text-xs w-[64.5%] text-center text-red-400">--Please select Country--</span>
+              </div>
+              }   
+            </div>
+            <div className="flex justify-center">
+              <hr className='mt-5 w-[90%]'></hr>
+            </div>
             {/* ------------------------Food ingredients */}
            
 
               <div className='flex-col pb-2 flex mt-2'>
                 <label
                   htmlFor='foodIngredients'
-                  className='mt-2 ml-2 font-semibold'>
+                  className='mt-2 text-sm font-semibold'>
                   Food ingredients:
                 </label>
                 <div className='mt-2 flex items-center'>
-                  <textarea type='text'  id='foodIngredients' name='foodIngredients' rows='4' cols='50' onChange={handleSubmitfoodIngredients} value={foodIngredients}
+                  <textarea type='text' id='foodIngredients' name='foodIngredients' rows='4' className="2xl:w-full w-[100%]  border border-zinc-300 rounded" onChange={handleSubmitfoodIngredients} value={foodIngredients}
                   />
                 </div>
               </div>
@@ -214,21 +270,23 @@ const AddRecipe = () => {
 
             {/*-------------------------------Food Summary */}
             <div className='flex flex-col pb-2  mt-2'>
-              <label htmlFor='foodSummary' className='mt-2 ml-2 font-semibold'>
+              <label htmlFor='foodSummary' className='mt-2 text-sm font-semibold'>
                 Food Instruction:
               </label>
               <div className='mt-2 flex items-center'>
-                <textarea type='text'  id='foodSummary' name='foodSummary' onChange={handleSummary} value={foodSummary} rows='4' cols='50'/>
+                <textarea type='text'  id='foodSummary' name='foodSummary' className="w-full border border-zinc-300 rounded" onChange={handleSummary} value={foodSummary} rows='4'/>
               </div>
             </div>
 
             {/* ----------------------------Food Image */}
-            <div className='flex pb-2 mt-2 justify-center'>
-              <label htmlFor='myfile' className='mt-3 ml-2 mr-1 font-semibold'>
-                Select a file:
-              </label>
-              <div className='mt-2'>
-                <input type='file' name='myfile'  id='myfile' onChange={handleImageUpload} />
+            <div className='flex justify-between mt-2'>
+              <div >
+                <label htmlFor='myfile' className=' 2xl:text-sm xl:text-[12px] lg:text-[12px] md:text-[12px] sm:text-[12px] text-[12px] font-semibold '>
+                  Select a file:
+                </label>
+              </div>
+              <div className="2xl:w-[80%] xl:w-[82%] lg:w-[80%] md:w-[83%] sm:w-[79%] w-[79%]">
+                <input type='file' name='myfile'  id='myfile' className=" text-[12px] 2xl:text-sm xl:text-[12px] lg:text-[12px] md:text-[12px] sm:text-[12px] " onChange={handleImageUpload} />
               </div>
 
             </div>
@@ -236,14 +294,19 @@ const AddRecipe = () => {
 
             <div className='flex justify-center mt-5'>
               <button
-                className='p-2 mt-4 border font-bold border-black rounded-lg bg-orange-500/90 hover:bg-orange-800 hover:text-white'
+                className='p-2 mt-4 flex font-bold rounded bg-orange-500/90 hover:bg-black text-white'
                 onClick={addList}>
                 Submit
+                <img src={SendIcon} alt="Send" className="w-3 m-1"/>
               </button>
+              
             </div>
 
-          </fieldset>
-
+            </fieldset>
+          </div>
+          
+        </div>
+      
         </div>
       </div>
       {addSuccess && (
