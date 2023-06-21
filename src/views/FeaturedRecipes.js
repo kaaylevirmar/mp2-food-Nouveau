@@ -10,7 +10,7 @@ const FeaturedRecipes = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [selectedFood, setSelectedFood] = useState(null);
     const [isOpenFeatured, setOpenFeatured] = useState(false);
-    const [seeMore, setSeeMore] = useState({});
+    const [seeMore, setSeeMore] = useState(true);
 
     const toggleFood = (food) => {
       setShowInfo(!showInfo);
@@ -21,7 +21,9 @@ const FeaturedRecipes = () => {
       setShowInfo(false);
       setSelectedFood(null);
     };
+
     useEffect(() => {
+
       db.collection("food")
         .orderBy("datetime", "desc")
         .onSnapshot((snapshot) => {
@@ -41,14 +43,23 @@ const FeaturedRecipes = () => {
           );
           
         });
-       
-    }, []);
+        
+    },[]);
     
     
    useEffect(()=>{
-    setSeeMore(isfood.length <= 4);
-   },);
-   
+    SeeMoreDiv();
+    
+   });
+
+const SeeMoreDiv = (() =>{
+  if(isfood.length <=4){
+    setSeeMore(true);
+  } else{
+    setSeeMore(false);
+  }
+})
+console.log(seeMore);
 
     const [deleteThisFeatures, setDeleteThisFeatures] = useState(false);
 
@@ -63,7 +74,7 @@ const FeaturedRecipes = () => {
     const deleteAlert = ((food) => {
       setDeleteThisFeatures(true);
       setFoodFilterDelete(food);
-      
+      SeeMoreDiv();
       
     })
 
