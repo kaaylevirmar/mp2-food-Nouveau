@@ -24,9 +24,9 @@ const Home = () => {
   return (
 
   <div className=" flex bg-orange-200 pb-10 overflow-x-hidden" >
-      <div className="justify-self-center w-screen">
+      <div className="justify-self-center w-full">
         
-        <div className="text-center border h-64">
+        <div className="text-center h-64">
 
           <div className=" flex mt-10 justify-center">
               <img src={logoImg} alt='This is a logo' className="h-20 w-20 sm:w-40 sm:h-40 md:w-40 md:h-40 2xl:h-52 2xl:w-52"/>

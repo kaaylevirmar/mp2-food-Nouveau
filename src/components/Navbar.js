@@ -5,7 +5,7 @@ const Navbar = () => {
   let [toggle, setToggle] = useState(false);
 
   return (
-    <div className="navDiv">
+    <div className="navDiv w-full">
       <nav className='flex justify-between bg-orange-500 text-white px-10 py-5 '>
         <div className="flex items-center">
           <Link to='/' className="text-xl md:text-3xl 2xl:text-4xl font-black"><span className="text-black">Food </span><span>Nouveau</span></Link>

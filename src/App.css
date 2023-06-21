@@ -72,17 +72,13 @@ legend{
   font-weight: bold;
 }
 
-.categoryMainImg{
-  height: 200px;
-  width: 250px;
-}
+
 
 .homeSubscribe{
   font-family: 'Architects Daughter', cursive;
 }
 
 .modalHome{
-  /* z-index: 1000; */
   position: fixed;
 
   top: 0;
