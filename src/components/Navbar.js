@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
+
 const Navbar = () => {
   let [toggle, setToggle] = useState(false);
 
+  
   return (
     <div className="navDiv w-full">
       <nav className='flex justify-between bg-orange-500 text-white px-10 py-5 '>
@@ -37,7 +39,7 @@ const Navbar = () => {
       </nav>
       {
       toggle && (
-        <div >
+        <div className="2xl:hidden sm:hidden">
           <div className='text-white justify-center flex flex-col items-center bg-orange-400'>
             <div className=' flex justify-center active:font-bold  py-3 '>
               <Link to='/' className="hover:bg-orange-300 p-1 rounded-lg">Home</Link>

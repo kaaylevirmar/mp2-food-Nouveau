@@ -49,7 +49,6 @@ const FeaturedRecipes = () => {
     
    useEffect(()=>{
     SeeMoreDiv();
-    
    });
 
 const SeeMoreDiv = (() =>{
@@ -118,10 +117,10 @@ const SeeMoreDiv = (() =>{
         </div>
         <h1 className='2xl:text-4xl md:text-2xl text-xl text-center font-bold sampleMenu pt-5'>Featured Recipes</h1>
        
-        <div className='rounded-md flex flex-wrap w-full md:gap-2 2xl:gap-10 min-[360px]:gap-5 justify-center gap-4 mt-10 '>
+        <div className='rounded-md flex flex-wrap w-full md:gap-2 2xl:gap-10 min-[360px]:gap-4 justify-center gap-4 mt-10 '>
          
             {randomItems.map((food) => (
-              <div key={food.id} className='2xl:h-80 md:h-72 flex justify-center border'>
+              <div key={food.id} className='2xl:h-80 md:h-72 h-60 flex justify-center'>
                 <div>
                 <div>
                   <img
@@ -144,7 +143,7 @@ const SeeMoreDiv = (() =>{
 
                 {showInfo && selectedFood === food && (
                   <div className='fixed bg-slate-950/50 w-full h-screen rounded drop-shadow-lg randomInfo'>
-                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                     <div className="flex justify-between text-white my-1 ">
                         Recipe Info
                         <button
@@ -153,7 +152,7 @@ const SeeMoreDiv = (() =>{
                           <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                         </button>
                       </div>
-                    <div className='p-5 inline-block w-full h-[95.5%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                    <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                       <h1 className="text-4xl">{food.foodName.toUpperCase()}</h1>
                       <hr className='mb-5'></hr>
                       <div>
@@ -191,7 +190,7 @@ const SeeMoreDiv = (() =>{
             ))}
 
             {isOpenFeatured && 
-              <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+              <div className='fixed bg-slate-950/50 w-screen h-screen rounded randomInfo'>
               
                   <div className='p-5 w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-28 gap-5'>
                     <div className='flex justify-center'>

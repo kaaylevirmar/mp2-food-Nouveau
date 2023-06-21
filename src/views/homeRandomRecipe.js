@@ -60,10 +60,10 @@ const RandomRecipe = () => {
     }, []);
 
     return(
-        <div className="w-full">
+        <div className="w-full ">
             
-            <h1 className="text-3xl text-center font-black sampleMenu pt-5">Sample Menu</h1>
-            <div className="flex flex-wrap md:gap-10 gap-5 min-[360px]:gap-5 2xl:gap-16 mt-5 justify-center">
+            <h1 className="2xl:text-4xl md:text-2xl text-xl text-center font-black sampleMenu pt-5">Sample Menu</h1>
+            <div className="flex flex-wrap gap-4 min-[360px]:gap-4 2xl:gap-16 mt-5 justify-center">
                 {/*================================================================================= 1st random div */}
                 <div>
                     {foodApi1.map((food) => (
@@ -77,14 +77,14 @@ const RandomRecipe = () => {
                                 </div>
                             </div>
                             <div className="justify-center flex">
-                                <div className="flex border-2 border-orange-500 text-orange-500 rounded-lg hover:text-white hover:bg-orange-500 bg-white " >
+                                <div className="flex border-2 border-orange-500 text-orange-500 rounded-lg hover:text-white hover:bg-orange-500 bg-white" >
                                     <button onClick={()=>{ setPopupInfoApi1(true)}} className=" px-1 font-bold text-xs 2xl:text-sm ">Read More </button>
                                     <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
                                 </div>
                             </div>
                             {popupInfoApi1 && (
                                 <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
-                                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                                 <div className="flex justify-between text-white my-1">
                                 Recipe Info
                                 <button className='hover:bg-orange-100 rounded-full font-bold '
@@ -94,7 +94,7 @@ const RandomRecipe = () => {
                                 <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                                 </button>
                                 </div>
-                                    <div className='p-5 inline-block w-full h-[95.5%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                                    <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
                                                 <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -180,7 +180,7 @@ const RandomRecipe = () => {
                              </div>
                             {popupInfoApi2 && (
                                 <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
-                                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                                     <div className="flex justify-between text-white my-1 ">
                                         Recipe Info
                                         <button className='hover:bg-orange-100 rounded-full font-bold '
@@ -190,7 +190,7 @@ const RandomRecipe = () => {
                                         <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                                         </button>
                                     </div>
-                                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                                    <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
                                                 <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -273,7 +273,7 @@ const RandomRecipe = () => {
                             </div>
                             {popupInfoApi3 && (
                                 <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
-                                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                                     <div className="flex justify-between text-white my-1 ">
                                 Recipe Info
                                 <button className='hover:bg-orange-100 rounded-full font-bold '
@@ -283,7 +283,7 @@ const RandomRecipe = () => {
                                 <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                                 </button>
                                 </div>
-                                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                                    <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
                                                 <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -366,7 +366,7 @@ const RandomRecipe = () => {
                             </div>
                             {popupInfoApi4 && (
                                 <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
-                                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                                     <div className="flex justify-between text-white my-1">
                                 Recipe Info
                                 <button className='hover:bg-orange-100 rounded-full font-bold '
@@ -376,7 +376,7 @@ const RandomRecipe = () => {
                                 <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                                 </button>
                                 </div>
-                                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                                    <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
                                                 <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>

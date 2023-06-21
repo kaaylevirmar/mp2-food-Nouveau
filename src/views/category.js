@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import 'firebase/firestore';
 import db from "../firebase-config";
+import Closebutton from '../images/icons8-close-48.png';
+import GreaterThan from '../images/icons8-greater-than-50.png';
 
 
 export default function Category({ category }) {
@@ -16,18 +18,17 @@ export default function Category({ category }) {
   const [addFavorite, setAddFavorite] = useState('');
   const [favoriteAlready, setFavoriteAlready] = useState(false);
 
-  const closePopup = () => {
-    setShowInfo(false);
-    setSelectedFood(null);
-  };
+  // const closePopup = () => {
+  //   setShowInfo(false);
+  //   setSelectedFood(null);
+  // };
 
   const toggleCategoryFood = async (catStage) => {
     setShowInfo(!showInfo);
     setSelectedFood(catStage);
     setCategoryFoodUrl(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${catStage.idMeal}`)
-
-    
   }
+
   const [categoryFoodUrl, setCategoryFoodUrl] = useState(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52959`);
 
 
@@ -89,28 +90,39 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
   }, [url])
 
   return (
-    <div className="">
+    <div className=" 2xl:w-52 2xl:h-40 sm:w-44 sm:h-32 w-32">
       <div className="text-center">
-        <img onClick={()=> setIsOpen(true)} src={category.strCategoryThumb} alt="categories" className="rounded-lg"/>
+        <div className="bg-orange-200/60 rounded">
+        <img onClick={()=> setIsOpen(true)} src={category.strCategoryThumb} alt="categories" className="rounded-lg border-2 border-black"/>
+        </div>
         <div className="font-bold" onClick={()=> setIsOpen(true)}>{category.strCategory}</div>
       </div>
 
       {isOpen && 
-        <div className="fixed bg-slate-950/50 w-[1600px] h-screen rounded drop-shadow-lg randomInfo">
-          <div className="p-5 w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-10">
+        <div className="fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo">
+          <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
+          <div className="flex justify-between text-white my-1">
+                      Category
+                      <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={()=>{setIsOpen(false)}}>
+                      <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+            </div>
+          <div className="p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black">
             <div className="flex justify-center">
               <div className="text-center">
                 <img src={category.strCategoryThumb} alt="categories" className="rounded-lg"/>
                 <h1 className="text-4xl pb-5">{category.strCategory}</h1>
                 
               </div>
-              <button onClick={()=>{setIsOpen(false)}} className='border border-black p-2  top-4 right-4 rounded-lg hover:bg-orange-600 hover:text-white   hover:rounded-lg bg-orange-500 font-bold absolute'>Close </  button>
+              
             </div>
             <div className="flex justify-center">
             <hr className="w-[1000px] text-center"></hr>
             </div>
             <div className="flex justify-center">
-              <div className="flex flex-wrap mt-10 gap-10 justify-center border-8 bg-white/50 border-double border-black w-[1050px] py-10">
+              <div className="flex flex-wrap mt-10 gap-10 justify-center border-8 bg-white border-double border-black w-[1050px] py-10">
                 {categoryStage.map(catStage =>(
             
                   <div key={catStage.idMeal}>
@@ -118,22 +130,37 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                     <div className="h-80">
 
                       <div className="text-center flex flex-col justify-center w-52">
-                        <img src={catStage.strMealThumb} alt="Modal images" className="rounded-lg "/>
+                        <img src={catStage.strMealThumb} alt="Modal images" className="rounded-lg border-2 border-black "/>
 
                         <div className="h-16 flex justify-center">
                           <p className="font-bold text-sm mb-2 self-center text-center">{catStage.strMeal}</p>
                         </div>
                       </div>
                     
-                      <div className="justify-center flex">
-                        <button onClick={()=>toggleCategoryFood(catStage)} className="p-2 hover:bg-orange-600 hover:text-white hover: rounded-lg bg-orange-500 font-bold">Read More</button>
+                      <div>
+                    <div className="justify-center flex" onClick={()=>toggleCategoryFood(catStage)}>
+                      <div  className="flex border-2 border-orange-500 text-orange-500 rounded-lg mb-2 hover:text-white hover:bg-orange-500">
+                        <button className=" px-1 font-bold text-xs 2xl:text-sm ">Read More</button>
+                        <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
                       </div>
+                    </div>
+                  </div>
   
                     </div>
                     {showInfo && selectedFood === catStage && ( 
-                      <div className='fixed w-[1600px] h-screen rounded drop-shadow-lg randomInfo'>
+                      <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+                        <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
+                        <div className="flex justify-between text-white my-1">
+                        Recipe Info
+                        <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={()=>{setShowInfo(false)}}>
+                        <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                        </div>
+
                         {categoryInfo.map((categoryDiv) =>
-                          <div key={categoryDiv.idMeal} className='p-5 w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-28'>
+                          <div key={categoryDiv.idMeal} className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                             <div className="flex">
                               <div className="w-8/12">
                                 <h1 className="text-4xl">{categoryDiv.strMeal}</h1>
@@ -199,10 +226,10 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                               />
                         
                             </div>
-                            <button onClick={closePopup} className=' absolute border border-black p-2 top-4 right-4 p-2 hover:bg-orange-600 hover:text-white hover: rounded-lg bg-orange-500 font-bold'>Close</button>
+                          
                           </div>
                         )}
-                      
+                      </div>
                       </div>
                     )}
                   </div>               
@@ -219,9 +246,9 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
             <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
               <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>{addFavorite} is already in favorites.</div>
             </div>
-      )}
+            )}
           
-
+        </div>
         </div>
       }
     

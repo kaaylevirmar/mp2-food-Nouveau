@@ -44,11 +44,9 @@ const Modal = ({ setOpenModal }) => {
       {!emailSend &&
       <div className='w-96 h-68 bg-orange-500/90 p-6 modalHomeEmail drop-shadow-2xl rounded'>
         <h3 className='text-2xl'>Subscribe to our newsletter</h3>
-        <div className='pt-5 text-justify indent-4'>
+        <div className='pt-5 text-justify indent-4 text-xl'>
           
-          An email will be send to you everyweek. The email contains a new
-          information that will be received and the information about the
-          benefits of using our platform.
+          An email will be send to you everyweek for updates.
         </div>
         
         <div className='pt-3'>

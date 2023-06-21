@@ -700,7 +700,7 @@ const FrenchFlagButton = async() =>{
         <div className='flex w-full mt-10 justify-center menuMainDiv '>
            
           {isHidden ? (
-            <div className='flex flex-wrap md:gap-10 min-[360px]:gap-5 2xl:gap-20 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10'>
+            <div className='flex flex-wrap md:gap-10 gap-4 min-[360px]:gap-4 2xl:gap-16 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10'>
             
             {/*---------------------------------------- 1st random */}
            
@@ -1598,7 +1598,7 @@ const FrenchFlagButton = async() =>{
               {/* ========================SEARCH INFO DIV */}
 
               {notFound ? (
-                <div className="flex flex-wrap gap-16  md:gap-10 min-[360px]:gap-5 2xl:gap-20 justify-center">
+                <div className="flex flex-wrap gap-16 md:gap-10 min-[360px]:gap-5 2xl:gap-16 justify-center">
                 {getFoodApi?.map((food) => ( 
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
@@ -1726,7 +1726,7 @@ const FrenchFlagButton = async() =>{
             </div>
 
             <div className="flex justify-center">
-              <div className="flex flex-wrap gap-16 md:gap-10 min-[360px]:gap-5 2xl:gap-20 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10" >
+              <div className="flex flex-wrap gap-16 md:gap-10 min-[360px]:gap-5 2xl:gap-16 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10" >
               {country.map((food) => (
                 <div key={food.idMeal} className=" h-60 md:h-72 2xl:h-80">
                   <div className="text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72"> 

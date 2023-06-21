@@ -23,7 +23,7 @@ const Home = () => {
   
   return (
 
-  <div className=" flex bg-orange-200 pb-10 overflow-x-hidden" >
+  <div className=" flex bg-orange-200/60 pb-10 overflow-x-hidden" >
       <div className="justify-self-center w-full">
         
         <div className="text-center">
@@ -31,7 +31,7 @@ const Home = () => {
           <div className=" flex mt-10 justify-center">
               <img src={logoImg} alt='This is a logo' className="h-28 w-28 md:w-40 md:h-40 2xl:h-52 2xl:w-52"/>
               <div className="p-4">
-                <p className="text-sm md:text-base 2xl:text-5xl min-[360]:text-[8px] ">Welcome to <span className="logoFontFam">Food <span className="text-white">Nouveau</span></span></p>
+                <p className="text-sm md:text-base 2xl:text-5xl min-[360]:text-[8px] ">Welcome to <span className="logoFontFam">Food <span className="text-orange-500">Nouveau</span></span></p>
                 <p className="md:text-sm text-xs font-semibold pt-10">We serve you a lot of recipe here at our website.</p>
                 <p className="md:text-sm text-xs font-semibold">We preferred also a lot of recipes around the world.</p>
                 
@@ -53,18 +53,19 @@ const Home = () => {
             <FeaturedRecipes/>
 
         
-        
-            <div className=" flex justify-center">
-              <hr className="mt-4 w-[1200px]"/>
-            </div>
 
-            <h1 className="text-center text-3xl font-black sampleMenu mt-5">Categories</h1>
-            <div className="flex justify-center flex-wrap gap-5 mt-10 pb-10">
-              {categories.map(category => (
-              <Category key={category.idCategory} category={category} />
-             ))}
+           
+            <div className="">
+              <div className=" flex justify-center w-full mt-2">
+                <hr className=" w-[80%]"/>
+              </div>
+              <h1 className="text-center 2xl:text-4xl md:text-2xl text-xl font-black mt-5 md:mt-5 2xl:mt-5 sampleMenu">Categories</h1>
+              <div className="flex justify-center flex-wrap gap-5 mt-10 pb-10">
+                {categories.map(category => (
+                  <Category key={category.idCategory} category={category} />
+                ))}
+              </div>
             </div>
-
         </div>
         </div>
       </div>
