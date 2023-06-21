@@ -59,7 +59,7 @@ const SeeMoreDiv = (() =>{
     setSeeMore(false);
   }
 })
-console.log(seeMore);
+
 
     const [deleteThisFeatures, setDeleteThisFeatures] = useState(false);
 
