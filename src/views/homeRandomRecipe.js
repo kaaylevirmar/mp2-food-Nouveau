@@ -62,14 +62,14 @@ const RandomRecipe = () => {
     return(
         <div className="w-full">
             
-            <h1 className="text-3xl text-center font-black sampleMenu pt-10">Sample Menu</h1>
-            <div className="flex flex-wrap gap-16 mt-5 justify-center">
+            <h1 className="text-3xl text-center font-black sampleMenu pt-5">Sample Menu</h1>
+            <div className="flex flex-wrap md:gap-10 gap-5 min-[360px]:gap-5 2xl:gap-16 mt-5 justify-center">
                 {/*================================================================================= 1st random div */}
                 <div>
                     {foodApi1.map((food) => (
                         <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                             <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                                <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border border-black' src={food.strMealThumb}alt='Food_Picture_API1'/>
+                                <img className='w-32 h-32 2xl:w-56 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black' src={food.strMealThumb}alt='Food_Picture_API1'/>
                                 <div className='h-16 flex justify-center'>
                                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                                         {food.strMeal}
@@ -94,7 +94,7 @@ const RandomRecipe = () => {
                                 <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                                 </button>
                                 </div>
-                                    <div className='p-5 inline-block w-full h-[94.6%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
+                                    <div className='p-5 inline-block w-full h-[95.5%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
                                                 <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
@@ -165,7 +165,7 @@ const RandomRecipe = () => {
                     {foodApi2.map((food) => (
                         <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                             <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                                <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border border-black' src={food.strMealThumb}alt='Food_Picture_API2'/>
+                                <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black' src={food.strMealThumb}alt='Food_Picture_API2'/>
                                 <div className='h-16 flex justify-center'>
                                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                                         {food.strMeal}
@@ -258,7 +258,7 @@ const RandomRecipe = () => {
                     {foodApi3.map((food) => (
                         <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                             <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                            <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border border-black' src={food.strMealThumb}alt='Food_Picture_API3'/>
+                            <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black' src={food.strMealThumb}alt='Food_Picture_API3'/>
                             <div className='h-16 flex justify-center'>
                                 <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                                     {food.strMeal}
@@ -351,7 +351,7 @@ const RandomRecipe = () => {
                     {foodApi4.map((food) => (
                         <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                             <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                                <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border border-black' src={food.strMealThumb}alt='Food_Picture_API4'/>
+                                <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black' src={food.strMealThumb}alt='Food_Picture_API4'/>
                                 <div className='h-16 flex justify-center'>
                                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                                         {food.strMeal}

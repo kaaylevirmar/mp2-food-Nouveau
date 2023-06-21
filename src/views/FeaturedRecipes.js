@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import db from "../firebase-config";
+import GreaterThan from '../images/icons8-greater-than-50.png';
+import Closebutton from '../images/icons8-close-48.png';
 
 const FeaturedRecipes = () => {
 
@@ -8,7 +10,8 @@ const FeaturedRecipes = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [selectedFood, setSelectedFood] = useState(null);
     const [isOpenFeatured, setOpenFeatured] = useState(false);
-  
+    const [seeMore, setSeeMore] = useState({});
+
     const toggleFood = (food) => {
       setShowInfo(!showInfo);
       setSelectedFood(food);
@@ -36,8 +39,16 @@ const FeaturedRecipes = () => {
               };
             })
           );
+          
         });
+       
     }, []);
+    
+    
+   useEffect(()=>{
+    setSeeMore(isfood.length <= 4);
+   },);
+   
 
     const [deleteThisFeatures, setDeleteThisFeatures] = useState(false);
 
@@ -52,11 +63,11 @@ const FeaturedRecipes = () => {
     const deleteAlert = ((food) => {
       setDeleteThisFeatures(true);
       setFoodFilterDelete(food);
-    
+      
       
     })
 
-
+    
 
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
@@ -78,6 +89,7 @@ const FeaturedRecipes = () => {
           setDeleteSuccess(false);
         },2000)
         
+
       }).catch(error => {
         console.error("Error deleting document: ", error);
       });
@@ -90,16 +102,19 @@ const FeaturedRecipes = () => {
 
     <div className='flex justify-center mt-5'>
       <div>
-        <hr></hr>
-        <h1 className='text-3xl text-center font-bold sampleMenu pt-5'>Featured Recipes</h1>
+        <div className='flex justify-center'>
+        <hr className='w-[80%]'></hr>
+        </div>
+        <h1 className='2xl:text-4xl md:text-2xl text-xl text-center font-bold sampleMenu pt-5'>Featured Recipes</h1>
        
-        <div className='rounded-md flex flex-wrap w-[1000px] gap-5 justify-center  mt-10 '>
+        <div className='rounded-md flex flex-wrap w-full md:gap-2 2xl:gap-10 min-[360px]:gap-5 justify-center gap-4 mt-10 '>
          
             {randomItems.map((food) => (
-              <div key={food.id} className='w-52 h-80'>
+              <div key={food.id} className='2xl:h-80 md:h-72 flex justify-center border'>
+                <div>
                 <div>
                   <img
-                    className='w-52 h-48 rounded-lg' src={food.image} alt='food'/>
+                    className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black ' src={food.image} alt='food'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-bold text-sm text-center self-center'>
                       {food.foodName.toUpperCase()}
@@ -107,13 +122,27 @@ const FeaturedRecipes = () => {
                   </div>
                 </div>
                
-                <div className="text-center mb-4 gap-4 flex justify-center">
-                  <button onClick={()=>toggleFood(food)} className="p-2 hover:bg-orange-600 hover:text-white hover: rounded-lg bg-orange-500 font-bold">Read More</button>
-                </div>
+                <div>
+                    <div className="justify-center flex ">
+                      <div className="flex border-2 border-orange-500 text-orange-500 rounded-lg mb-2 hover:text-white hover:bg-orange-500" >
+                        <button onClick={()=> toggleFood(food)} className=" px-1 font-bold text-xs 2xl:text-sm ">Read More </button>
+                        <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
+                      </div>
+                    </div>
+                  </div>
 
                 {showInfo && selectedFood === food && (
-                  <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
-                    <div className='p-5 inline-block w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12'>
+                  <div className='fixed bg-slate-950/50 w-full h-screen rounded drop-shadow-lg randomInfo'>
+                    <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
+                    <div className="flex justify-between text-white my-1 ">
+                        Recipe Info
+                        <button
+                          className='hover:bg-orange-100 rounded-full font-bold '
+                          onClick={closePopup}>
+                          <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+                      </div>
+                    <div className='p-5 inline-block w-full h-[95.5%] 2xl:w-full 2xl:h-[41.6rem] bg-orange-200 pt-5 overflow-auto border border-black'>
                       <h1 className="text-4xl">{food.foodName.toUpperCase()}</h1>
                       <hr className='mb-5'></hr>
                       <div>
@@ -139,13 +168,14 @@ const FeaturedRecipes = () => {
                         <p className="text-justify px-5">{food.foodSummary}</p>
                         <h3 className="pt-5"><strong>Image:</strong></h3>
                         <img className='w-52 h-48 ml-5 mt-3 rounded-lg'src={food.image} alt='Food'/>
-                        <button className=' absolute border border-black  top-4 right-4 p-2 hover:bg-orange-600 hover:text-whitehover:rounded-lg bg-orange-500 font-bold'onClick={closePopup}>Close</button>
+                        
                       </div>
                       
                     </div>
-                   
+                    </div>
                   </div>
                 )}
+                </div>
               </div>
             ))}
 
@@ -240,9 +270,10 @@ const FeaturedRecipes = () => {
             }
               
         </div>
-        <div className='flex justify-center mt-10'>
+        {!seeMore && <div className='flex justify-center mt-10'>
            <button onClick={()=>{ setOpenFeatured(!isOpenFeatured)}} className='p-2 hover:bg-orange-600 hover:text-white rounded-lg bg-orange-500 font-bold'>See More</button>
-        </div>
+        </div>}    
+        
       </div>            
     </div>
   )

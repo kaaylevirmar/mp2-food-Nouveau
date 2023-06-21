@@ -700,7 +700,7 @@ const FrenchFlagButton = async() =>{
         <div className='flex w-full mt-10 justify-center menuMainDiv '>
            
           {isHidden ? (
-            <div className='flex flex-wrap gap-16 md:gap-10 min-[360px]:gap-5 2xl:gap-20 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10'>
+            <div className='flex flex-wrap md:gap-10 min-[360px]:gap-5 2xl:gap-20 w-screen 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 min-[360px]:mb-10'>
             
             {/*---------------------------------------- 1st random */}
            
@@ -708,7 +708,7 @@ const FrenchFlagButton = async() =>{
               {foodApi1.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                   <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg ' src={food.strMealThumb}
+                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black ' src={food.strMealThumb}
                       alt='Food_Picture_API1'/>
                     <div className='h-16 flex justify-center'>
                       <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
@@ -726,7 +726,7 @@ const FrenchFlagButton = async() =>{
                     </div>
                   </div>
                   {popupInfoApi1 && (
-                    <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
+                    <div className='fixed bg-slate-950/50 w-full h-screen rounded drop-shadow-lg randomInfo'>
                     <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[44rem]">
                     <div className="flex justify-between text-white my-1 ">
                         Recipe Info
@@ -819,7 +819,7 @@ const FrenchFlagButton = async() =>{
               {foodApi2.map((food) => (
                 <div key={food.idMeal}  className="h-60 md:h-72 2xl:h-80">
                   <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg ' src={food.strMealThumb}
+                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black ' src={food.strMealThumb}
                       alt='Food_Picture_API1'/>
                     <div className='h-16 flex justify-center'>
                       <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
@@ -930,7 +930,7 @@ const FrenchFlagButton = async() =>{
               {foodApi3.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                   <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black 'src={food.strMealThumb}alt='Food_Picture_API2'/>
                     <div className='h-16 flex justify-center'>
                       <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                         {food.strMeal}
@@ -1041,7 +1041,7 @@ const FrenchFlagButton = async() =>{
               {foodApi4.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                   <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                    <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black'src={food.strMealThumb}alt='Food_Picture_API2'/>
                     <div className='h-16 flex justify-center'>
                       <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                         {food.strMeal}
@@ -1152,7 +1152,7 @@ const FrenchFlagButton = async() =>{
               {foodApi5.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black'src={food.strMealThumb}alt='Food_Picture_API2'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                       {food.strMeal}
@@ -1263,7 +1263,7 @@ const FrenchFlagButton = async() =>{
               {foodApi6.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black'src={food.strMealThumb}alt='Food_Picture_API2'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                       {food.strMeal}
@@ -1374,7 +1374,7 @@ const FrenchFlagButton = async() =>{
               {foodApi7.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black'src={food.strMealThumb}alt='Food_Picture_API2'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                       {food.strMeal}
@@ -1485,7 +1485,7 @@ const FrenchFlagButton = async() =>{
               {foodApi8.map((food) => (
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg 'src={food.strMealThumb}alt='Food_Picture_API2'/>
+                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black'src={food.strMealThumb}alt='Food_Picture_API2'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
                       {food.strMeal}
@@ -1602,7 +1602,7 @@ const FrenchFlagButton = async() =>{
                 {getFoodApi?.map((food) => ( 
                 <div key={food.idMeal} className="h-60 md:h-72 2xl:h-80">
                 <div className='text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72'>
-                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg ' src={food.strMealThumb}
+                  <img className='w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black' src={food.strMealThumb}
                     alt='Food_Picture_API1'/>
                   <div className='h-16 flex justify-center'>
                     <div className='font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center'>
@@ -1731,7 +1731,7 @@ const FrenchFlagButton = async() =>{
                 <div key={food.idMeal} className=" h-60 md:h-72 2xl:h-80">
                   <div className="text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72"> 
                     <img src={food.strMealThumb}
-                    alt="Country Food" className="w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg"/>
+                    alt="Country Food" className="w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black"/>
                     <div className="h-16 flex justify-center ">
                         <p className="font-bold text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center">{food.strMeal}</p>
                     </div>
