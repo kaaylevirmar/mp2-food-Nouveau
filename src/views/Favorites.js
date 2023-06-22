@@ -27,6 +27,20 @@ const Favorites = () => {
     }
   }, []);
 
+  const [nullData, setNullData] = useState(false);
+
+  useEffect(()=>{
+    dataChecking();
+  });
+
+const dataChecking = (()=>{
+  if(data.length === 0){
+    setNullData(true);
+  } else{
+    setNullData(false);
+  }
+})
+
 
   const[favoriteDelete, setFavoriteDelete] = useState(false)
  
@@ -63,16 +77,16 @@ const Favorites = () => {
 
   
   return (
-  <div className=' flex justify-center pb-10 bg-orange-300 h-full overflow-x-hidden'>
+  <div className=' flex justify-center pb-10 bg-orange-300 h-full '>
         
-    <div className="w-[1600px]">
+    <div className="w-full ">
 
       <div className='py-5'>
         <h1 className='text-4xl text-center py-5 favoriteDiv font-bold'>Favorites</h1>
-        <div className='w-[1600px] flex justify-center'>
-          <div >
-            <hr></hr>
-          </div>
+        <div className='w-full flex justify-center'>
+         
+            <hr className='w-[55%]'></hr>
+   
         </div>
       </div>
 
@@ -101,9 +115,9 @@ const Favorites = () => {
 
               
 
-{/* ============================================================alert */}
+              {/* ============================================================alert */}
               {deleteAlert && selectedFood === food.strMeal && (
-                <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome '>
+                <div className='w-full h-screen border bg-white/60 text-white modalHome '>
 
                   <div className='w-96 h-68 bg-black/90 p-6 drop-shadow-2xl rounded text-center modalHomeEmail'>
                     Do you want to delete {food.strMeal} on favorite?
@@ -116,10 +130,10 @@ const Favorites = () => {
               )}
 
               
-{/* ============================================================alert */}
+                    {/* ============================================================alert */}
 
               {showInfo && selectedFood === food && (
-                <div className='fixed bg-slate-950/50 w-[1600px] h-screen rounded drop-shadow-lg randomInfo'>
+                <div className='fixed bg-slate-950/50 w-full h-screen rounded drop-shadow-lg randomInfo'>
                   <div className='p-5 inline-block w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-28'>
                     <h1 className="text-4xl">{food.strMeal.toUpperCase()}</h1>
                     <hr></hr>
@@ -192,12 +206,18 @@ const Favorites = () => {
         
          
                 {favoriteDelete && (
-                  <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
+                  <div className='w-full h-screen border bg-white/60 text-white modalHome'>
                   <div className='w-96 bg-black/90 p-6 drop-shadow-2xl rounded text-center modalHomeEmail'>
                       You successfully delete.
                   </div>
                 </div>
               )}
+
+          {nullData && 
+          <div className='h-full'>
+              <p className='2xl:text-5xl text-xl p-9'>No Added Favorites</p>
+          </div>
+          }
         </div>
 
       </div>

@@ -5,7 +5,7 @@ import Closebutton from '../images/icons8-close-48.png';
 import GreaterThan from '../images/icons8-greater-than-50.png';
 import AddToFavoritesLocalStorage from "../components/AddToFavoritesLocalStorage";
 
-export default function Category({ category }) {
+const Category = ({ category }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [categoryStage, setCategoryStage] = useState([]);
   const [categoryInfo, setCategoryInfo] = useState([]);
@@ -212,3 +212,4 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
   )
       
 }
+export default Category;

@@ -3,10 +3,7 @@ import { useState } from "react";
 import "firebase/firestore";
 import db from "../firebase-config";
 import logoImg from "../logo-spoon.png";
-import Food1 from "../images/food1.jpg";
-import Food2 from "../images/food2.jpg";
-import Food3 from "../images/food3.jpg";
-import Food4 from "../images/food4.jpg";
+
 
 const Modal = ({ setOpenModal }) => {
   const [input, setInput] = useState("");
@@ -28,7 +25,7 @@ const Modal = ({ setOpenModal }) => {
   const sendEmail = async () => {
     const querySnapshot = await db
       .collection("UserEmail")
-      .where("email", "==", input)
+      .where("email", "===", input)
       .get();
 
     if(!querySnapshot.empty){
@@ -102,14 +99,14 @@ const Modal = ({ setOpenModal }) => {
               </span>
             )}
           </div>
-          <div className='p-2 text-white mb-2'>
+          <div className='p-2 text-white mb-2 flex justify-center gap-4'>
             <button
-              className=' mr-20 p-1 mt-4 border-4 border-orange-600  text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white '
+              className=' p-1 px-3 mt-4 border-4 border-orange-600  text-orange-600 font-bold rounded-xl hover:bg-orange-600 hover:text-white '
               onClick={sendEmail}>
-              Subscribe
+              Send
             </button>
             <button
-              className='p-1 mt-4 border-4 border-orange-600 text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white'
+              className='p-1 mt-4 border-4 border-orange-600 text-orange-600 font-bold rounded-xl hover:bg-orange-600 hover:text-white'
               onClick={() => {
                 setOpenModal(false);
               }}>
@@ -128,26 +125,6 @@ const Modal = ({ setOpenModal }) => {
               <p className='text-base'>Thanks for becoming a subscriber!</p>
             </div>
           </div>
-          <img
-            src={Food1}
-            alt='Food1'
-            className='absolute border-4 border-white / 2xl:right-5 2xl:bottom-10 * 2xl:w-[30%] 2xl:h-[40%] / xl:w-[28%] xl:h-[38%] * xl:right-5 xl:bottom-10 / lg:right-4 lg:bottom-10 * lg:w-[28%] lg:h-[38%] rounded-lg '
-          />
-          <img
-            src={Food2}
-            alt='Food2'
-            className='absolute border-4 border-white / 2xl:left-20 2xl:top-16 * 2xl:w-[45%] 2xl:h-[60%] / xl:w-[43%] xl:h-[58%] * xl:left-20 xl:top-16 / lg:left-20 lg:top-16 * lg:w-[43%] lg:h-[58%] rounded-lg'
-          />
-          <img
-            src={Food3}
-            alt='Food3'
-            className='absolute border-4 border-white / 2xl:right-40 2xl:top-20 * 2xl:w-[25%] 2xl:h-[30%] / xl:w-[25%] xl:h-[30%] * xl:right-28 xl:top-16 / lg:right-24 lg:top-16 * lg:w-[25%] lg:h-[30%] rounded-lg'
-          />
-          <img
-            src={Food4}
-            alt='Food4'
-            className='absolute border-4 border-white / 2xl:left-44 2xl:bottom-10 * 2xl:w-[30%] 2xl:h-[35%] / xl:w-[28%] xl:h-[33%] * xl:left-44 xl:bottom-12 / lg:left-44 lg:bottom-12 * lg:w-[28%] lg:h-[33%] rounded-lg'
-          />
         </div>
       )}
     </div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import db from "../firebase-config";
 import GreaterThan from '../images/icons8-greater-than-50.png';
 import Closebutton from '../images/icons8-close-48.png';
+import TranshIcon from '../images/icons8-trash-64.png';
 
 const FeaturedRecipes = () => {
 
@@ -142,7 +143,7 @@ const SeeMoreDiv = (() =>{
                   </div>
 
                 {showInfo && selectedFood === food && (
-                  <div className='fixed bg-slate-950/50 w-full h-screen rounded drop-shadow-lg randomInfo'>
+                  <div className='fixed bg-slate-950/50 w-full h-full rounded drop-shadow-lg randomInfo'>
                     <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
                     <div className="flex justify-between text-white my-1 ">
                         Recipe Info
@@ -190,57 +191,79 @@ const SeeMoreDiv = (() =>{
             ))}
 
             {isOpenFeatured && 
-              <div className='fixed bg-slate-950/50 w-screen h-screen rounded randomInfo'>
-              
-                  <div className='p-5 w-9/12 h-[42rem] bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-28 gap-5'>
+              <div className='fixed bg-slate-950/50 w-full h-full rounded randomInfo'>
+                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
+                <div className="flex justify-between text-white my-1">
+                      Featured Recipes
+                      <button
+                        className='hover:bg-orange-100 rounded-full font-bold '
+                        onClick={()=>{setOpenFeatured(false)}}>
+                      <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                        </button>
+            </div>
+
+                  <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
+                    
                     <div className='flex justify-center'>
                       <div className='text-center'>
                         
-                        <h1 className='text-4xl pb-5'>Featured Recipes</h1>
-                        <button className=' absolute  top-4 right-4 p-2  hover:bg-orange-600 hover:text-white rounded-lg bg-orange-500  font-bold' onClick={()=>{setOpenFeatured(false)}}>Close</button>
+                        <h1 className='text-5xl pb-5'>Featured Recipes</h1>
+                       
                       
                       </div>
                     </div>
                     <div className="flex justify-center">
-                      <hr className="w-[1000px] text-center"></hr>
+                      <hr className="w-[70%] text-center"></hr>
                     </div>
                     <div className='flex justify-center'>
-                      <div className='flex flex-wrap mt-10 gap-10 justify-center border-8 bg-white/50 border-double border-black w-[1050px] p-10'>
-                        {isfood.map((food,index) => (
-                          <div key={index}>
-                            <div className='w-52'>
-                              <img className='w-48 h-48 rounded-lg' src={food.image}  alt='food'/>
-                              <div className='px-6 py-3'>
-                                <div className='font-bold text-sm mb-2 text-center'>
-                                  {food.foodName.toUpperCase()}
+                      <div className='flex flex-wrap mt-10 gap-10 justify-center border-8 bg-white border-double border-black w-[92%] p-10'>
+                          {isfood.map((food,index) => (
+                            <div key={index}>
+                              <div className='w-48 h- '>
+                                <img className='w-48 h-48 rounded-lg' src={food.image}  alt='food'/>
+                                <div className='px-6 py-3'>
+                                  <div className='font-bold text-sm mb-2 text-center'>
+                                    {food.foodName.toUpperCase()}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                        {/* ==========================================food delete div */}
-                            <div className="text-center mb-4">
-                            
-                            <button onClick={() => deleteAlert(food)}  className='border p-2 mr-5 rounded-lg bg-orange-500 hover:bg-orange-600 hover:text-white font-bold'>Delete</button>
-
-                             <button onClick={()=>toggleFood(food)} className="p-2  hover:bg-orange-600 hover:text-white hover: rounded-lg   bg-orange-500       font-bold">Read More</button>
+                                {/* ==========================================food delete div */}
+                              <div className="text-center mb-4 flex justify-center gap-3">
+                              <div className=" flex items-center" onClick={()=>toggleFood(food)}>
+                                <div  className="flex border-2 border-orange-500 text-orange-500 rounded-lg hover:text-white hover:bg-orange-500">
+                                  <button className=" px-1 font-bold text-xs 2xl:text-sm ">Read More</button>
+                                    <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
+                                </div>
+                              </div>
+                              <div   className='border border-black flex items-center hover:bg-orange-200 border-2 rounded-lg border-orange-500'>
+                                <img src={TranshIcon} alt='trash' className='w-7' onClick={() => deleteAlert(food)}/>
+                              </div>
                             </div>
 
                             {deleteThisFeatures && foodFilterDelete === food && (
-                              <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-                              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center '>
+                              <div className='w-full h-full border bg-black/60 text-white modalHome'>
+                              <div className='w-96 h-68 bg-white p-6 modalHomeEmail text-orange-500 drop-shadow-2xl rounded text-center border-4 border-orange-500 font-bold'>
                                 Do you want to delete {food.foodName}?
-                                <div className='flex justify-center gap-10'>
-                                <button onClick={()=>handleDelete(food.id)}>Yes</button>
-                                <button onClick={()=> setDeleteThisFeatures(false)}>No</button>
+                                <div className='flex justify-center gap-10 pt-4 font-bold'>
+                                <button onClick={()=>handleDelete(food.id)} className='rounded-md border-2 border-orange-500 px-2 hover:text-white hover:border-white hover:bg-orange-500 '>Yes</button>
+                                <button onClick={()=> setDeleteThisFeatures(false)} className='rounded-md border-2 border-orange-500 px-2 hover:text-white hover:border-white hover:bg-orange-500'>No</button>
                                 </div>
                               </div>
                             </div>
                             )}
 
                             
-                          {/* ==========================================food delete div */}
+                       
                             {showInfo && selectedFood === food && (
                               <div className='fixed bg-slate-950/50 w-screen h-screen   rounded drop-shadow-lg randomInfo'>
-                                <div className='p-5 inline-block w-9/12 h-[42rem]   bg-orange-300 foodInfo mb-1 pt-12 overflow-auto pb-28'>
+                                <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
+                                <div className="flex justify-between text-white my-1">
+                                  Recipe info
+                                  <button className='hover:bg-orange-100 rounded-full font-bold' onClick={closePopup}>
+                                    <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
+                                  </button>
+                                </div>
+                                <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                             
                                   <h1 className="text-4xl">{food.foodName.toUpperCase()}</h1>
                                   <hr></hr>
@@ -257,9 +280,10 @@ const SeeMoreDiv = (() =>{
                                     <p className=" text-justify px-5">{food.foodSummary}</p>
                                     <h3 className="pt-5"><strong>Image:</strong></h3>
                                     <img className='w-80 h-80 ml-5 mt-3 rounded-lg'src={food.image} alt='Food'/>
-                                    <button className=' absolute border border-black top-4 right-4 p-2 hover:bg-orange-600 hover:text-white   hover:        rounded-lg bg-orange-500 font-bold'   onClick={closePopup}>Close</button>
+                                  
                                   </div>
                             
+                                </div>
                                 </div>
                               </div>
                             )}                         
@@ -275,13 +299,15 @@ const SeeMoreDiv = (() =>{
                       </div>
                     </div>          
                   </div> 
-                
+                  </div>
               </div> 
             }
               
         </div>
-        {!seeMore && <div className='flex justify-center mt-10'>
-           <button onClick={()=>{ setOpenFeatured(!isOpenFeatured)}} className='p-2 hover:bg-orange-600 hover:text-white rounded-lg bg-orange-500 font-bold'>See More</button>
+        {!seeMore && <div className='flex justify-center mt-10 '>
+          <div className='otherSeeMore rounded-lg'>
+           <button onClick={()=>{ setOpenFeatured(!isOpenFeatured)}} className='px-2 py-1 hover:bg-orange-500 hover:text-white text-orange-500 border-2 border-orange-500 rounded-lg bg-white font-bold seeMore'>See More</button>
+           </div>
         </div>}    
         
       </div>            
