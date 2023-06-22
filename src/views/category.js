@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import 'firebase/firestore';
-import db from "../firebase-config";
+
 import Closebutton from '../images/icons8-close-48.png';
 import GreaterThan from '../images/icons8-greater-than-50.png';
-
+import AddToFavoritesLocalStorage from "../components/AddToFavoritesLocalStorage";
 
 export default function Category({ category }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,6 @@ export default function Category({ category }) {
   const [selectedFood, setSelectedFood] = useState(null);
 
 
-  const [favoriteSend, setFavoriteSend] = useState(false)
-  const [addFavorite, setAddFavorite] = useState('');
-  const [favoriteAlready, setFavoriteAlready] = useState(false);
 
   // const closePopup = () => {
   //   setShowInfo(false);
@@ -45,38 +42,6 @@ export default function Category({ category }) {
   
 
 
-  const addToFavorites = (item) => {
-    // Check if the item already exists in the "favorites" collection
-    db.collection("favorites")
-      .where("idMeal", "==", item.idMeal)
-      .get()
-      .then((querySnapshot) => {
-        if (querySnapshot.empty) {
-          // Add the item to the "favorites" collection if it doesn't exist
-          db.collection("favorites")
-            .add(item)
-            .then(() => {
-              setFavoriteSend(true)
-              setAddFavorite(item.strMeal)
-              setTimeout(()=> {
-              setFavoriteSend(false)
-            },2000)
-            })
-            .catch((error) => {
-              console.error("Error adding item to favorites: ", error);
-            });
-        } else {
-          setFavoriteAlready(true);
-          setAddFavorite(item.strMeal)
-          setTimeout(()=> {
-          setFavoriteAlready(false)
-        },2000)
-        }
-      })
-      .catch((error) => {
-        console.error("Error checking item in favorites: ", error);
-      });
-  };
 
 const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`;
   
@@ -166,7 +131,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                                 <h1 className="text-4xl">{categoryDiv.strMeal}</h1>
                               </div>
                               <div className="self-end ">
-                                <button onClick={()=>{addToFavorites(categoryDiv)}} className=" ml-5 p-1 mt-1 px-3 rounded-full hover:bg-orange-600  hover:text-white bg-orange-500 font-bold mb-1"> Add to favorites</button>
+                              <AddToFavoritesLocalStorage data={categoryDiv}/>
                               </div>
                             </div>
                             <hr></hr>
@@ -186,7 +151,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                                 <p><span className="font-medium">{categoryDiv.strIngredient8}</ span> - {categoryDiv.strMeasure8}</p>
                                 <p><span className="font-medium">{categoryDiv.strIngredient9}</ span> - {categoryDiv.strMeasure9}</p>
                                 <p><span className="font-medium">{categoryDiv.strIngredient10}  </span> - {categoryDiv.strMeasure10}</p>
-                              </div>
+                              </div >
                               <div>
                                 <p><span className="font-medium">{categoryDiv.strIngredient11}</span> - {categoryDiv.strMeasure11}</p>
                                 <p><span className="font-medium">{categoryDiv.strIngredient12}</span> - {categoryDiv.strMeasure12}</p>
@@ -237,16 +202,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
               </div>
             </div>
           </div>
-          {favoriteSend && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully add {addFavorite} to your favorite.</div>
-            </div>
-          )}
-          {favoriteAlready && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>{addFavorite} is already in favorites.</div>
-            </div>
-            )}
+        
           
         </div>
         </div>
