@@ -63,7 +63,7 @@ const RandomRecipe = () => {
         <div className="w-full ">
             
             <h1 className="2xl:text-4xl md:text-2xl text-xl text-center font-black sampleMenu pt-5">Sample Recipes</h1>
-            <div className="flex flex-wrap gap-4 min-[360px]:gap-4 2xl:gap-16 mt-5 justify-center">
+            <div className="flex flex-wrap gap-4 lg:gap-12 mt-5 justify-center">
                 {/*================================================================================= 1st random div */}
                 <div>
                     {foodApi1.map((food) => (
