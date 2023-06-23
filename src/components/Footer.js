@@ -25,8 +25,17 @@ const Footer = () => {
       setIsValid(emailRegex.test(enteredEmail));
     };
 
-    const isSendEmail = () => {
-        if(email ===""){
+    const isSendEmail = async () => {
+
+      const querySnapshot = await db
+      .collection("UserEmail")
+      .where("email", "==", email)
+      .get();
+
+        if(!querySnapshot.empty){
+          alert('Email Already Existed')
+
+        }else if(email ===""){
           alert("Email address is required");
         } else if(isValid) {
 
@@ -88,7 +97,7 @@ const Footer = () => {
           </div>
             {emailSend && (
             <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-                <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded'>Email Send</div>
+                <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded'>Email Sent</div>
             </div>
                 
                 )}
