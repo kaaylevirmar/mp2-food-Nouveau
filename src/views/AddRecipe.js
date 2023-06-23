@@ -32,6 +32,13 @@ const AddRecipe = () => {
   const [imgUpload, setImgUpload] = useState("");
   const [foodSummary, setFoodSummary] = useState("");
   const [addFoodName, setAddFoodName] = useState("");
+  // const [inputValidation,setInputValidation] = useState(false);
+
+
+  //validation states
+  const [ingredientsValidation, setIngredientsValidation] = useState(false);
+  const [summaryValidation, setSummaryValidation] = useState(false);
+  const [imageValidation, setImageValidation] = useState(false);
 
   const handleSubmitfoodName = (event) => {
     setFoodName(event.target.value);
@@ -50,6 +57,8 @@ const AddRecipe = () => {
   const handleImageUpload = (e) => {
     setImgUpload(e.target.files[0]);
   };
+
+  
 
   const handleSummary = (event) => {
     setFoodSummary(event.target.value);
@@ -89,18 +98,33 @@ const AddRecipe = () => {
     foodCountryNotNull();
     foodCategoryNotNull();
     foodNameNotNull();
-    if(foodName === ""){
+    if(foodName === "" ){
+
+      // setInputValidation(true);
+
+      // setTimeout(()=>{
+      //   setInputValidation(false);
+      // }, 2000)
       setNullFoodName(true);
     }else if(foodCountry ===""){
       setNullFoodCountry(true);
     }else if(foodCategory === "") {
       setNullFoodCategory(true);
     }else if(foodIngredients ===""){
-      alert("Ingredients is required.");
+      setIngredientsValidation(true);
+      setTimeout(()=>{
+        setIngredientsValidation(false);
+      },2000)
     }else if(foodSummary ===""){
-      alert("Please set the guidelines how to cook your food recipe.");
-    }else if(imgUpload ===""){
-      alert("Please take a food picture.");
+      setSummaryValidation(true);
+      setTimeout(()=>{
+        setSummaryValidation(false);
+      }, 2000)
+    }else if(imgUpload === ""){
+      setImageValidation(true);
+      setTimeout(()=>{
+        setImageValidation(false);
+      }, 2000)
     }
     else{
       
@@ -189,13 +213,13 @@ const AddRecipe = () => {
             <div className=' flex justify-between '>
               {/*-------------------- Food Name */}
               <div className="self-center">
-              <label htmlFor='foodName' className='text-sm md:base font-semibold'>
+              <label htmlFor='foodName' className='text-sm md:base font-semibold required'>
                 Food Name:
               </label>
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
                 {nullFoodName && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
-                <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
+                <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] required text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
               </div>
             </div>
             {nullFoodName && 
@@ -212,8 +236,8 @@ const AddRecipe = () => {
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
               {nullFoodCountry && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
-                <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" onChange={handleSubmitfoodCountry}>
-                  <option >Select Country</option>
+                <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] required sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" onChange={handleSubmitfoodCountry}>
+                  <option value='' >Select Country</option>
                   {getCountry.map((counrty) => (
                     <option key={counrty.strArea} value={counrty.strArea}> 
                       {counrty.strArea}
@@ -235,8 +259,8 @@ const AddRecipe = () => {
                 </div>
                 <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
                   {nullFoodCategory && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
-                  <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] w-[96%] text-sm border border-zinc-300 rounded" value={foodCategory} name="foodCategory" onChange={handleSubmitfoodCategory} id="selectCategory" placeholder="Select cat">
-                    <option >Select Category</option>
+                  <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] required md:w-[96%] sm:w-[96%] w-[96%] text-sm border border-zinc-300 rounded" value={foodCategory} name="foodCategory" onChange={handleSubmitfoodCategory} id="selectCategory" placeholder="Select cat">
+                    <option value='' >Select Category</option>
                       {getCategory.map(setCategory =>(
                       <option key={setCategory.idCategory} value={setCategory.strCategory}>  {setCategory.strCategory}</option>
                       ))}
@@ -262,7 +286,7 @@ const AddRecipe = () => {
                   Food ingredients:
                 </label>
                 <div className='mt-2 flex items-center'>
-                  <textarea type='text' id='foodIngredients' name='foodIngredients' rows='4' className="2xl:w-full w-[100%]  border border-zinc-300 rounded" onChange={handleSubmitfoodIngredients} value={foodIngredients}
+                  <textarea type='text' id='foodIngredients' name='foodIngredients' rows='4' className=" required 2xl:w-full w-[100%]  border border-zinc-300 rounded" onChange={handleSubmitfoodIngredients} value={foodIngredients}
                   />
                 </div>
               </div>
@@ -286,7 +310,7 @@ const AddRecipe = () => {
                 </label>
               </div>
               <div className="2xl:w-[80%] xl:w-[82%] lg:w-[80%] md:w-[83%] sm:w-[79%] w-[79%]">
-                <input type='file' name='myfile'  id='myfile' className=" text-[12px] 2xl:text-sm xl:text-[12px] lg:text-[12px] md:text-[12px] sm:text-[12px] " onChange={handleImageUpload} />
+                <input type='file' name='myfile'  id='myfile' className=" required text-[12px] 2xl:text-sm xl:text-[12px] lg:text-[12px] md:text-[12px] sm:text-[12px] " onChange={handleImageUpload} />
               </div>
 
             </div>
@@ -311,7 +335,26 @@ const AddRecipe = () => {
       </div>
       {addSuccess && (
             <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully added {addFoodName}.</div>
+              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully added {foodName}.</div>
+            </div>
+      )}
+
+{ingredientsValidation && (
+            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
+              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please input ingredients of {foodName}.</div>
+            </div>
+      )}
+      
+
+      {summaryValidation && (
+            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
+              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please provide intructions of your {addFoodName} recipe.</div>
+            </div>
+      )}
+
+{imageValidation && (
+            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
+              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please upload image of your dish.</div>
             </div>
       )}
     </div>  
