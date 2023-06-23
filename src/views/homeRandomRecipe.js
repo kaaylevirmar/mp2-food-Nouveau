@@ -62,7 +62,7 @@ const RandomRecipe = () => {
     return(
         <div className="w-full ">
             
-            <h1 className="2xl:text-4xl md:text-2xl text-xl text-center font-black sampleMenu pt-5">Sample Menu</h1>
+            <h1 className="2xl:text-4xl md:text-2xl text-xl text-center font-black sampleMenu pt-5">Sample Recipes</h1>
             <div className="flex flex-wrap gap-4 min-[360px]:gap-4 2xl:gap-16 mt-5 justify-center">
                 {/*================================================================================= 1st random div */}
                 <div>
@@ -97,67 +97,68 @@ const RandomRecipe = () => {
                                     <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
-                                                <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
+                                                <h1 className="text-2xl 2xl:text-4xl font-semibold ">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
                                                <AddToFavoritesLocalStorage data={food}/>
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <h3>
-                                        <strong>Ingredients</strong>
-                                        </h3>
-                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px]">
-                                            <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold ">{food.strIngredient1}</span> {food.strMeasure1}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient2}</span> {food.strMeasure2}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient3}</span> {food.strMeasure3}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient4}</span> {food.strMeasure4}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient5}</span> {food.strMeasure5}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient6}</span> {food.strMeasure6}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient7}</span> {food.strMeasure7}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient8}</span> {food.strMeasure8}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient9}</span> {food.strMeasure9}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient10}</span> {food.strMeasure10}</p>
+                                        <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold">Ingredients:</h3>
+                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] mt-2">
+                                        <div className="pl-5">
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient1}</span> {food.strMeasure1}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient2}</span> {food.strMeasure2}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient3}</span> {food.strMeasure3}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient4}</span> {food.strMeasure4}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient5}</span> {food.strMeasure5}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient6}</span> {food.strMeasure6}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient7}</span> {food.strMeasure7}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient8}</span> {food.strMeasure8}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient9}</span> {food.strMeasure9}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient10}</span> {food.strMeasure10}</p>
                                             </div>
                                             <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient11}</span> {food.strMeasure11}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient12}</span> {food.strMeasure12}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient13}</span> {food.strMeasure13}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient14}</span> {food.strMeasure14}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient15}</span> {food.strMeasure15}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient16}</span> {food.strMeasure16}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient17}</span> {food.strMeasure17}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient18}</span> {food.strMeasure18}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient19}</span> {food.strMeasure19}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient20}</span> {food.strMeasure20}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient11}</span> {food.strMeasure11}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient12}</span> {food.strMeasure12}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient13}</span> {food.strMeasure13}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient14}</span> {food.strMeasure14}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient15}</span> {food.strMeasure15}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient16}</span> {food.strMeasure16}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient17}</span> {food.strMeasure17}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient18}</span> {food.strMeasure18}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient19}</span> {food.strMeasure19}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient20}</span> {food.strMeasure20}</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 className="text-lg pt-5">
-                                              <strong>Instructions:</strong>
-                                            </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Instructions:</h3>
+
+                                            <ul className="text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] list-disc pl-5">
                                             {food.strInstructions.split('. ').map((instruction, idx) => {
                                              if (instruction.match(/^\d+\.\s/)) {
                                             // Instruction starts with a number followed by a dot and a space
                                             const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
                                              return <li key={idx}>{instructionWithoutNumber}</li>;
                                                  } else {
-                                             return <li key={idx}>{instruction}</li>;
+                                             return <li  className="pb-2" key={idx}>{instruction}</li>;
                                               }
                                                  })}
-
+                                            </ul>
                                             
+                                            <div>
+                                                <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Youtube:</h3>
+                                                <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
+                                            </div>
 
-                                            <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
-                                            <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
-
-                                            <h3 className="text-lg pt-5"><strong>Source:</strong></h3>
-                                            <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
-
-                                            <h3 className="pt-5"> <strong>Image:</strong> </h3>
+                                            <div>
+                                                <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Source:</h3>
+                                                <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
+                                            </div>
+                                            
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Image:</h3>
                                             <div className="flex justify-center md:justify-start">
-                                                <img className='w-80 h-80 mt-3 rounded'src={food.strMealThumb} alt='Food_Picture_Search'/>
+                                                <img className='w-80 h-80 mt-3 rounded border-2 border-black pl:5'src={food.strMealThumb} alt='Food_Picture'/>
                                             </div>
                                         </div>
                                     </div>
@@ -203,67 +204,64 @@ const RandomRecipe = () => {
                                     <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
-                                                <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
+                                                <h1 className="text-2xl 2xl:text-4xl font-semibold">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
                                             <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <h3>
-                                        <strong>Ingredients</strong>
-                                        </h3>
-                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px]">
-                                            <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold ">{food.strIngredient1}</span> {food.strMeasure1}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient2}</span> {food.strMeasure2}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient3}</span> {food.strMeasure3}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient4}</span> {food.strMeasure4}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient5}</span> {food.strMeasure5}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient6}</span> {food.strMeasure6}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient7}</span> {food.strMeasure7}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient8}</span> {food.strMeasure8}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient9}</span> {food.strMeasure9}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient10}</span> {food.strMeasure10}</p>
-                                            </div>
-                                            <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient11}</span> {food.strMeasure11}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient12}</span> {food.strMeasure12}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient13}</span> {food.strMeasure13}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient14}</span> {food.strMeasure14}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient15}</span> {food.strMeasure15}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient16}</span> {food.strMeasure16}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient17}</span> {food.strMeasure17}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient18}</span> {food.strMeasure18}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient19}</span> {food.strMeasure19}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient20}</span> {food.strMeasure20}</p>
-                                            </div>
+                                        <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold">Ingredients:</h3>
+                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] mt-2">
+                                        <div className="pl-5">
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient1}</span> {food.strMeasure1}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient2}</span> {food.strMeasure2}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient3}</span> {food.strMeasure3}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient4}</span> {food.strMeasure4}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient5}</span> {food.strMeasure5}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient6}</span> {food.strMeasure6}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient7}</span> {food.strMeasure7}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient8}</span> {food.strMeasure8}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient9}</span> {food.strMeasure9}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient10}</span> {food.strMeasure10}</p>
+                                        </div>
+                                        <div className="pl-5">
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient11}</span> {food.strMeasure11}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient12}</span> {food.strMeasure12}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient13}</span> {food.strMeasure13}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient14}</span> {food.strMeasure14}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient15}</span> {food.strMeasure15}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient16}</span> {food.strMeasure16}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient17}</span> {food.strMeasure17}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient18}</span> {food.strMeasure18}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient19}</span> {food.strMeasure19}</p>
+                                            <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient20}</span> {food.strMeasure20}</p>
+                                        </div>
                                         </div>
                                         <div>
-                                            <h3 className="text-lg pt-5">
-                                              <strong>Instructions:</strong>
-                                            </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Instructions:</h3>
+                                            <ul className="text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] list-disc pl-5">
                                             {food.strInstructions.split('. ').map((instruction, idx) => {
                                              if (instruction.match(/^\d+\.\s/)) {
                                             // Instruction starts with a number followed by a dot and a space
                                             const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
                                              return <li key={idx}>{instructionWithoutNumber}</li>;
                                                  } else {
-                                             return <li key={idx}>{instruction}</li>;
+                                             return <li className="pb-2" key={idx}>{instruction}</li>;
                                               }
                                                  })}
 
-                                            
+                                            </ul>   
 
-                                            <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Youtube:</h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
 
-                                            <h3 className="text-lg pt-5"><strong>Source:</strong></h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Source:</h3>
                                             <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
 
-                                            <h3 className="pt-5"> <strong>Image:</strong> </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Image:</h3>
                                             <div className="flex justify-center md:justify-start">
-                                                <img className='w-80 h-80 mt-3 rounded'src={food.strMealThumb} alt='Food_Picture_Search'/>
+                                                <img className='w-80 h-80 mt-3 rounded border-2 border-black pl:5'src={food.strMealThumb} alt='Food_Picture_Search'/>
                                             </div>
                                         </div>
                                     </div>
@@ -306,67 +304,65 @@ const RandomRecipe = () => {
                                     <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
-                                                <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
+                                                <h1 className="text-2xl 2xl:text-4xl font-semibold">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
                                             <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <h3>
-                                        <strong>Ingredients</strong>
-                                        </h3>
-                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px]">
+                                        <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold">Ingredients:</h3>
+                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] mt-2">
                                         <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold ">{food.strIngredient1}</span> {food.strMeasure1}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient2}</span> {food.strMeasure2}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient3}</span> {food.strMeasure3}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient4}</span> {food.strMeasure4}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient5}</span> {food.strMeasure5}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient6}</span> {food.strMeasure6}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient7}</span> {food.strMeasure7}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient8}</span> {food.strMeasure8}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient9}</span> {food.strMeasure9}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient10}</span> {food.strMeasure10}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient1}</span> {food.strMeasure1}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient2}</span> {food.strMeasure2}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient3}</span> {food.strMeasure3}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient4}</span> {food.strMeasure4}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient5}</span> {food.strMeasure5}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient6}</span> {food.strMeasure6}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient7}</span> {food.strMeasure7}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient8}</span> {food.strMeasure8}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient9}</span> {food.strMeasure9}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient10}</span> {food.strMeasure10}</p>
                                             </div>
                                             <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient11}</span> {food.strMeasure11}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient12}</span> {food.strMeasure12}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient13}</span> {food.strMeasure13}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient14}</span> {food.strMeasure14}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient15}</span> {food.strMeasure15}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient16}</span> {food.strMeasure16}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient17}</span> {food.strMeasure17}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient18}</span> {food.strMeasure18}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient19}</span> {food.strMeasure19}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient20}</span> {food.strMeasure20}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient11}</span> {food.strMeasure11}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient12}</span> {food.strMeasure12}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient13}</span> {food.strMeasure13}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient14}</span> {food.strMeasure14}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient15}</span> {food.strMeasure15}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient16}</span> {food.strMeasure16}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient17}</span> {food.strMeasure17}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient18}</span> {food.strMeasure18}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient19}</span> {food.strMeasure19}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient20}</span> {food.strMeasure20}</p>
                                             </div>
                                         </div>
                                         <div>
-                                        <h3 className="text-lg pt-5">
-                                              <strong>Instructions:</strong>
-                                            </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Instructions:</h3>
+                                            <ul className="text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] list-disc pl-5">
                                             {food.strInstructions.split('. ').map((instruction, idx) => {
                                              if (instruction.match(/^\d+\.\s/)) {
                                             // Instruction starts with a number followed by a dot and a space
                                             const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
                                              return <li key={idx}>{instructionWithoutNumber}</li>;
                                                  } else {
-                                             return <li key={idx}>{instruction}</li>;
+                                             return <li className="pb-2" key={idx}>{instruction}</li>;
                                               }
                                                  })}
 
-                                            
+                                            </ul>
 
-                                            <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Youtube:</h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
 
-                                            <h3 className="text-lg pt-5"><strong>Source:</strong></h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Source:</h3>
                                             <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
 
-                                            <h3 className="pt-5"> <strong>Image:</strong> </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Image:</h3>
                                             <div className="flex justify-center md:justify-start">
-                                                <img className='w-80 h-80 mt-3 rounded'src={food.strMealThumb} alt='Food_Picture_Search'/>
+                                                
+                                                <img className='w-80 h-80 mt-3 rounded border-2 border-black pl:5'src={food.strMealThumb} alt='Food_Picture_Search'/>
                                             </div>
                                         </div>
                                     </div>
@@ -409,65 +405,67 @@ const RandomRecipe = () => {
                                     <div className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
                                         <div className="flex justify-between mt-5">
                                             <div className="w-8/12 self-end">
-                                                <h1 className="text-2xl 2xl:text-4xl">{food.strMeal}</h1>
+                                                <h1 className="text-2xl 2xl:text-4xl font-semibold ">{food.strMeal}</h1>
                                             </div>
                                             <div className="self-end">
                                             <AddToFavoritesLocalStorage data={food}/> 
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <h3>
-                                        <strong>Ingredients</strong>
-                                        </h3>
-                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px]">
+                                        <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold">Ingredients:</h3>
+                                        <div className="grid grid-cols-2 text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] mt-2">
                                             <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold ">{food.strIngredient1}</span> {food.strMeasure1}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient2}</span> {food.strMeasure2}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient3}</span> {food.strMeasure3}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient4}</span> {food.strMeasure4}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient5}</span> {food.strMeasure5}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient6}</span> {food.strMeasure6}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient7}</span> {food.strMeasure7}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient8}</span> {food.strMeasure8}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient9}</span> {food.strMeasure9}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient10}</span> {food.strMeasure10}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient1}</span> {food.strMeasure1}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient2}</span> {food.strMeasure2}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient3}</span> {food.strMeasure3}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient4}</span> {food.strMeasure4}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient5}</span> {food.strMeasure5}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient6}</span> {food.strMeasure6}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient7}</span> {food.strMeasure7}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient8}</span> {food.strMeasure8}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient9}</span> {food.strMeasure9}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient10}</span> {food.strMeasure10}</p>
                                             </div>
                                             <div className="pl-5">
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient11}</span> {food.strMeasure11}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient12}</span> {food.strMeasure12}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient13}</span> {food.strMeasure13}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient14}</span> {food.strMeasure14}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient15}</span> {food.strMeasure15}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient16}</span> {food.strMeasure16}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient17}</span> {food.strMeasure17}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient18}</span> {food.strMeasure18}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient19}</span> {food.strMeasure19}</p>
-                                                <p className="2xl:my-1"><span className="font-bold">{food.strIngredient20}</span> {food.strMeasure20}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient11}</span> {food.strMeasure11}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient12}</span> {food.strMeasure12}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient13}</span> {food.strMeasure13}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient14}</span> {food.strMeasure14}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient15}</span> {food.strMeasure15}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient16}</span> {food.strMeasure16}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient17}</span> {food.strMeasure17}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient18}</span> {food.strMeasure18}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient19}</span> {food.strMeasure19}</p>
+                                                <p className="2xl:my-1"><span className="font-bold pr-2">{food.strIngredient20}</span> {food.strMeasure20}</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 className="text-lg pt-5">
-                                              <strong>Instructions:</strong>
-                                            </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Instructions:</h3>
+                                            <ul className="text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] list-disc pl-5">
                                             {food.strInstructions.split('. ').map((instruction, idx) => {
                                              if (instruction.match(/^\d+\.\s/)) {
                                             // Instruction starts with a number followed by a dot and a space
                                             const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
                                              return <li key={idx}>{instructionWithoutNumber}</li>;
                                                  } else {
-                                             return <li key={idx}>{instruction}</li>;
+                                             return <li className="pb-2" key={idx}>{instruction}</li>;
                                               }
                                                  })}
+                                            </ul>
+                                            
+                                            <div>
+                                                <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Youtube:</h3>
+                                                <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
+                                            </div>
 
-                                            <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
-                                            <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
+                                            <div>
+                                                <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Source:</h3>
+                                                <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
+                                            </div>
 
-                                            <h3 className="text-lg pt-5"><strong>Source:</strong></h3>
-                                            <a href={food.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strSource}</a>
-
-                                            <h3 className="pt-5"> <strong>Image:</strong> </h3>
+                                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Image:</h3>
                                             <div className="flex justify-center md:justify-start">
-                                                <img className='w-80 h-80 mt-3 rounded'src={food.strMealThumb} alt='Food_Picture_Search'/>
+                                            <img className='w-80 h-80 mt-3 rounded border-2 border-black pl:5'src={food.strMealThumb} alt='Food_Picture'/>
                                             </div>
                                         </div>
                                     </div>

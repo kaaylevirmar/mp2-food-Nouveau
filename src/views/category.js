@@ -126,80 +126,68 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
 
                         {categoryInfo.map((categoryDiv) =>
                           <div key={categoryDiv.idMeal} className='p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black'>
-                            <div className="flex">
-                              <div className="w-8/12">
-                                <h1 className="text-4xl">{categoryDiv.strMeal}</h1>
+                            <div className="flex justify-between mt-5">
+                              <div className="w-8/12 self-end">
+                                <h1 className="text-2xl 2xl:text-4xl font-semibold">{categoryDiv.strMeal}</h1>
                               </div>
                               <div className="self-end ">
                               <AddToFavoritesLocalStorage data={categoryDiv}/>
                               </div>
                             </div>
-                            <hr></hr>
-                            <h3>
-                              <strong>Ingredients:</strong>
-                            </h3>
-
-                            <div className="grid grid-cols-2">
-                              <div className="pl-5">
-                                <p><span className="font-medium">{categoryDiv.strIngredient1}</ span> - {categoryDiv.strMeasure1}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient2}</ span> - {categoryDiv.strMeasure2}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient3}</ span> - {categoryDiv.strMeasure3}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient4}</ span> - {categoryDiv.strMeasure4}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient5}</ span> - {categoryDiv.strMeasure5}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient6}</ span> - {categoryDiv.strMeasure6}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient7}</ span> - {categoryDiv.strMeasure7}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient8}</ span> - {categoryDiv.strMeasure8}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient9}</ span> - {categoryDiv.strMeasure9}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient10}  </span> - {categoryDiv.strMeasure10}</p>
-                              </div >
-                              <div>
-                                <p><span className="font-medium">{categoryDiv.strIngredient11}</span> - {categoryDiv.strMeasure11}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient12}</span> - {categoryDiv.strMeasure12}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient13}</span> - {categoryDiv.strMeasure13}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient14}</span> - {categoryDiv.strMeasure14}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient15}</span> - {categoryDiv.strMeasure15}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient16}</span> - {categoryDiv.strMeasure16}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient17}</span> - {categoryDiv.strMeasure17}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient18}</span> - {categoryDiv.strMeasure18}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient19}</span> - {categoryDiv.strMeasure19}</p>
-                                <p><span className="font-medium">{categoryDiv.strIngredient20}</span> - {categoryDiv.strMeasure20}</p>
+                              <hr></hr>
+                              <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold">Ingredients:</h3>
+                              <div className="grid grid-cols-2 text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] mt-2">
+                                <div className="pl-5">
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient1}</span> {categoryDiv.strMeasure1}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient2}</span> {categoryDiv.strMeasure2}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient3}</span> {categoryDiv.strMeasure3}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient4}</span> {categoryDiv.strMeasure4}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient5}</span> {categoryDiv.strMeasure5}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient6}</span> {categoryDiv.strMeasure6}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient7}</span> {categoryDiv.strMeasure7}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient8}</span> {categoryDiv.strMeasure8}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient9}</span> {categoryDiv.strMeasure9}</p>
+                                  <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient10}</span> {categoryDiv.strMeasure10}</p>
+                                </div>
+                                <div className="pl-5">
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient11}</span> {categoryDiv.strMeasure11}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient12}</span> {categoryDiv.strMeasure12}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient13}</span> {categoryDiv.strMeasure13}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient14}</span> {categoryDiv.strMeasure14}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient15}</span> {categoryDiv.strMeasure15}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient16}</span> {categoryDiv.strMeasure16}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient17}</span> {categoryDiv.strMeasure17}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient18}</span> {categoryDiv.strMeasure18}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient19}</span> {categoryDiv.strMeasure19}</p>
+                                    <p className="2xl:my-1"><span className="font-bold pr-2">{categoryDiv.strIngredient20}</span> {categoryDiv.strMeasure20}</p>
+                                </div>
                               </div>
-                            </div>
                             <div>
-                              <h3 className="pt-5">
-                                <strong strong>Instructions:</strong>
-                              </h3>
+                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Instructions:</h3>
+                            <ul className="text-xs 2xl:text-[15px] xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[13px] list-disc pl-5">
                               {categoryDiv.strInstructions.split('. ').map((instruction, idx) => {
-                                             if (instruction.match(/^\d+\.\s/)) {
-                                            // Instruction starts with a number followed by a dot and a space
-                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
-                                             return <li key={idx}>{instructionWithoutNumber}</li>;
-                                                 } else {
-                                             return <li key={idx}>{instruction}</li>;
-                                              }
-                                                 })}
+                                 if (instruction.match(/^\d+\.\s/)) {
+                                // Instruction starts with a number followed by a dot and a space
+                                const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                 return <li key={idx}>{instructionWithoutNumber}</li>;
+                                     } else {
+                                 return <li key={idx}>{instruction}</li>;
+                                  }
+                                     })}
 
-                             
+                            </ul>
 
-                              <h3 className="pt-5">
-                                <strong>Youtube:</strong>
-                              </h3>
-                              <a href={categoryDiv.strYoutube} target="_blank" rel="noreferrer"className="ml-5 hover:underline ">{categoryDiv.strYoutube}</a>
+                            <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Youtube:</h3>
+                              <a href={categoryDiv.strYoutube} target="_blank" rel="noreferrer"className="ml-5 hover:underline text-xs 2xl:text-[15px]">{categoryDiv.strYoutube}</a>
 
-                              <h3 className="pt-5">
-                              <strong>Source:</strong>
-                              </h3>
-                              <a href={categoryDiv.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline">{categoryDiv.strSource}</a>
+                              <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Source:</h3>
+                              <a href={categoryDiv.strSource} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{categoryDiv.strSource}</a>
 
-                              <h3 className="pt-5">
-                                <strong>Image:</strong>
-                              </h3>
-                              <img
-                                className='w-80 h-80 ml-5 mt-3 rounded'
-                                src={categoryDiv.strMealThumb}
-                                alt="Food_Picture_Search"
+                              <h3 className="2xl:text-2xl xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base font-bold pb-2 mt-5">Image:</h3>
+                              <div className="flex justify-center md:justify-start">
+                                <img className='w-80 h-80 mt-3 rounded border-2 border-black pl:5' src={categoryDiv.strMealThumb} alt="Food_Picture_Search"
                               />
-                        
+                              </div>
                             </div>
                           
                           </div>

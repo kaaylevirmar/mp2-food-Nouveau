@@ -21,18 +21,22 @@ const Modal = ({ setOpenModal }) => {
 
   const [inValidEmailAdd, setInvalidEmailAdd] = useState(false);
   const [nullEmail, setNullEmail] = useState(false);
+  const [alreadyExist, setAlreadyExist] = useState(false);
 
   const sendEmail = async () => {
     const querySnapshot = await db
       .collection("UserEmail")
-      .where("email", "===", input)
+      .where("email", "==", input)
       .get();
 
     if(!querySnapshot.empty){
-      alert('Already Existed')
+      setAlreadyExist(true);
+      setInvalidEmailAdd(false);
+      setNullEmail(false);
     } else if (input === '') {
       setNullEmail(true);
       setInvalidEmailAdd(false);
+      setAlreadyExist(false);
     } else if (isValid) {
       db.collection("UserEmail").add({
         email: input,
@@ -46,8 +50,9 @@ const Modal = ({ setOpenModal }) => {
     } else {
       setInvalidEmailAdd(true);
       setNullEmail(false);
+      setAlreadyExist(false);
     }
-  };
+  }
 
   return (
     <div className='w-full h-full border bg-black/70 text-white modalHome'>
@@ -98,6 +103,9 @@ const Modal = ({ setOpenModal }) => {
                 --Please input email address--
               </span>
             )}
+            {alreadyExist&&
+              <span className='text-red-500'>--This email is already exist--</span>
+            }
           </div>
           <div className='p-2 text-white mb-2 flex justify-center gap-4'>
             <button
