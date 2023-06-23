@@ -1,9 +1,6 @@
 import React from "react";
 import 'firebase/firestore';
-import db from "../firebase-config";
 import AddToFavoritesLocalStorage from "../components/AddToFavoritesLocalStorage";
-
-
 import { useState, useEffect } from "react";
 import AmericaFlag from '../images/american.png';
 import BritishFlag from '../images/british.png';
@@ -34,17 +31,14 @@ import TurkishFlag from '../images/Turkish.png'
 import VietnamFlag from '../images/Vietnamese.png';
 import SearchIcon from '../images/icons8-search-50.png';
 import Closebutton from '../images/icons8-close-48.png';
-import FavoriteButton from '../images/icons8-favorite-48.png';
+
 import GreaterThan from '../images/icons8-greater-than-50.png';
 
 
 
 
 const Menu = () => {
-  const [favoriteSend, setFavoriteSend] = useState(false);
-  const [addFavorite, setAddFavorite] = useState('');
-  const [favoriteAlready, setFavoriteAlready] = useState(false);
-
+  
 
   //-------------------------- 1st random recipe
   const [foodApi1, getFoodApi1] = useState([]);
@@ -157,36 +151,36 @@ const Menu = () => {
     setSelectedFood(null);
   };
 
-  const handleAddToFirestoreSearch = (data) => {
-    db.collection('favorites')
-    .where('idMeal', '==', data.idMeal)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        // Item doesn't exist, add it to favorites
-        db.collection('favorites').add(data)
-          .then(() => {
-            setFavoriteSend(true)
-            setTimeout(()=>{
-            setFavoriteSend(false)
-            },2000)
-          })
-          .catch((error) => {
-            console.error('Error adding item to favorites:', error);
-          });
-      } else {
-        setFavoriteAlready(true);
-        setAddFavorite(data.strMeal)
-        setTimeout(()=> {
-          setFavoriteAlready(false)
+  // const handleAddToFirestoreSearch = (data) => {
+  //   db.collection('favorites')
+  //   .where('idMeal', '==', data.idMeal)
+  //   .get()
+  //   .then((querySnapshot) => {
+  //     if (querySnapshot.empty) {
+  //       // Item doesn't exist, add it to favorites
+  //       db.collection('favorites').add(data)
+  //         .then(() => {
+  //           setFavoriteSend(true)
+  //           setTimeout(()=>{
+  //           setFavoriteSend(false)
+  //           },2000)
+  //         })
+  //         .catch((error) => {
+  //           console.error('Error adding item to favorites:', error);
+  //         });
+  //     } else {
+  //       setFavoriteAlready(true);
+  //       setAddFavorite(data.strMeal)
+  //       setTimeout(()=> {
+  //         setFavoriteAlready(false)
           
-        },2000)
-      }
-    })
-    .catch((error) => {
-      console.error('Error checking item in favorites:', error);
-    });
-  };
+  //       },2000)
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error checking item in favorites:', error);
+  //   });
+  // };
 
 
 
@@ -1827,7 +1821,7 @@ const selectCountry = () =>{
                         <h1 className="text-2xl 2xl:text-4xl">{countryFood.strMeal}</h1>
                         </div>
                         <div className="self-end ">
-                          <button onClick={()=>{ handleAddToFirestoreSearch(countryFood)}}><img src={FavoriteButton} alt="favorite button" className="hover:drop-shadow-2xl"/> </button>
+                            <AddToFavoritesLocalStorage data={countryFood}/>
                         </div>
                       </div>
                       <hr></hr>
@@ -2176,17 +2170,8 @@ const selectCountry = () =>{
         </div>
 
       </div>
-      {favoriteSend && (
-        <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-            <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully add {addFavorite} to your favorite.</div>
-        </div>
-      )}
+    
       
-      {favoriteAlready && (
-        <div className='w-screen h-screen border bg-white/60 text-white modalHome'>
-            <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>{addFavorite} is already in favorites.</div>
-        </div>
-      )}
     </div>
   )
 }
