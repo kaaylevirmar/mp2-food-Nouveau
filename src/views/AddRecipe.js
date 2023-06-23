@@ -98,7 +98,19 @@ const AddRecipe = () => {
     foodCountryNotNull();
     foodCategoryNotNull();
     foodNameNotNull();
-    if(foodName === "" ){
+
+    if(foodName === "" && foodCountry ==="" && foodCategory === "" && foodIngredients === "" && imgUpload === ""){
+      document.getElementById("foodName").style.border = "2px solid red";
+      document.getElementById("countrySelect").style.border = "2px solid red";
+      document.getElementById("selectCategory").style.border = "2px solid red";
+      document.getElementById("foodIngredients").style.border = "2px solid red";
+      document.getElementById("foodSummary").style.border = "2px solid red";
+      document.getElementById("myfile").style.border = "2px solid red";
+
+
+
+    }
+    else if(foodName === "" ){
 
       // setInputValidation(true);
 
@@ -236,7 +248,7 @@ const AddRecipe = () => {
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
               {nullFoodCountry && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
-                <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] required sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" onChange={handleSubmitfoodCountry}>
+                <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] required sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" id="countrySelect" onChange={handleSubmitfoodCountry}>
                   <option value='' >Select Country</option>
                   {getCountry.map((counrty) => (
                     <option key={counrty.strArea} value={counrty.strArea}> 

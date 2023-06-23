@@ -15,11 +15,12 @@ const Footer = () => {
     const [email, setEmail] = useState('');
     const [isValid, setIsValid] = useState(false);
     const [emailSend, setEmailSend] = useState(false)
+    const [emailPlaceholder, setEmailPlaceholder] = useState('Enter email address...');
 
     const handleEmailChange = (e) => {
       const enteredEmail = e.target.value;
       setEmail(enteredEmail);
-  
+    
       // Regular expression for email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       setIsValid(emailRegex.test(enteredEmail));
@@ -33,10 +34,15 @@ const Footer = () => {
       .get();
 
         if(!querySnapshot.empty){
-          alert('Email Already Existed')
+          setEmail("");
+          setEmailPlaceholder("Already Exists");
+          document.getElementById("emailAdd").style.border = "4px solid red";
+    
 
         }else if(email ===""){
-          alert("Email address is required");
+          
+          setEmailPlaceholder("Email address is required");
+          document.getElementById("emailAdd").style.border = "4px solid red";
         } else if(isValid) {
 
           db.collection("UserEmail").add({
@@ -45,11 +51,15 @@ const Footer = () => {
           })
          setEmailSend(true);
          setEmail("");
+         document.getElementById("emailAdd").style.border = "";
+         setEmailPlaceholder('Enter email address...');
          setTimeout(() => {
             setEmailSend(false)
          }, 2000)
         } else {
-          alert('Invalid Email');
+          setEmail("");
+          setEmailPlaceholder('Invalid Email Address');
+          document.getElementById("emailAdd").style.border = "4px solid red";
         }
       }
 
@@ -71,15 +81,15 @@ const Footer = () => {
                   </ul>
                 </div>
               
-                <div className=" text-left flex ">
-                    <div className='mt-2'>
-                    <input type="email" name="emailAddress" value={email} className="rounded-l-lg pl-2" size={30} onChange={handleEmailChange} placeholder='Enter email address...'/>
-                    </div>
-                    <div>
-                    <button onClick={isSendEmail}><img src={NewsLetterIcon} alt="News Letter Icon" className="w-8 h-8 mt-1"/></button>
-                    </div>
+                <div className=" text-left flex items-center mt-2">
+                   
+                      <input type="email" name="emailAddress" value={email} id='emailAdd' className="rounded-l-lg pl-2" size={30} onChange={handleEmailChange} placeholder={emailPlaceholder}/>
+               
+                 
+                      <button onClick={isSendEmail}><img src={NewsLetterIcon} alt="News Letter Icon"  className="w-8 h-8 "/></button>
+                    
                 </div>
-                <div className="text-left flex text-white">Copyright © 2023</div>
+                <div className="text-left flex text-white mt-1">Copyright © 2023</div>
           </div>
 
           {/* Second Grid */}
@@ -92,7 +102,7 @@ const Footer = () => {
           {/* Third Grid */}
           <div className="p-5 text-white">
               <div className="text-left text-xl font-bold">About the company</div>
-              <div className="text-left indent-6 pt-2 text-justify">Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.</div>
+              <div className="text-left text-sm indent-6 pt-2 text-justify">We built this system to help other people to serve their delicious food to their loved ones and to be more efficient with their cooking skills. We provide a lot of recipes that can help you improve your knowledge about foods.</div>
               <div className='flex justify-center gap-4 pt-3'><img src={FacebookIcon} alt='Facebook Icon' className="w-8 h-8 mt-2 mr-2"/><img src={TwitterIcon} alt='Facebook Icon' className="w-8 h-8 mt-2 mr-2"/><img src={InstagramIcon} alt='Facebook Icon' className="w-8 h-8 mt-2 mr-2"/><img src={GithubIcon} alt='Facebook Icon' className="w-8 h-8 mt-2 mr-2"/></div>
           </div>
             {emailSend && (

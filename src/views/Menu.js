@@ -133,7 +133,7 @@ const Menu = () => {
 
  
   // -------------------------- Search
-  const [foodSearch, setFoodSearch] = useState();
+  const [foodSearch, setFoodSearch] = useState('');
   const [getFoodApi, setGetFoodApi] = useState([]);
   const [isHidden, setIsHidden] = useState(true);
   
@@ -153,9 +153,9 @@ const Menu = () => {
 
   const HandleChangeFoodSearch = (e) => {
     setFoodSearch(e.target.value);
-
+   
 };
-const [searchRecipe, setSearchRecipe] = useState(``);
+const [searchRecipe, setSearchRecipe] = useState(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodSearch}`);
 
 
 useEffect(()=>{
@@ -168,17 +168,12 @@ useEffect(()=>{
 },[searchRecipe]);
 
 
-const handleSubmit = async (event) => {
+const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (typeof foodSearch !== 'string' || !/^[a-zA-Z\s]+$/.test(foodSearch)) {
-      alert("pls input valid ")
-    }
-
     setSearchRecipe(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodSearch}`);
-   
+    
     setNotFound(true);
- 
+    setCountryDiv(true);
     getfoodApiNull();
   
   setIsHidden(false);
@@ -190,7 +185,7 @@ const handleSubmit = async (event) => {
     if(getFoodApi === null){
       setNotFound(false);
     } else{
-      setCountryDiv(true);
+      
       setNotFound(true);
     }
   };
