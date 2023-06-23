@@ -137,7 +137,17 @@ const RandomRecipe = () => {
                                             <h3 className="text-lg pt-5">
                                               <strong>Instructions:</strong>
                                             </h3>
-                                            <p className="indent-10 text-justify px-5 text-xs 2xl:text-[15px]">{food.strInstructions}</p>
+                                            {food.strInstructions.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                                            
 
                                             <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
@@ -233,7 +243,17 @@ const RandomRecipe = () => {
                                             <h3 className="text-lg pt-5">
                                               <strong>Instructions:</strong>
                                             </h3>
-                                            <p className="indent-10 text-justify px-5 text-xs 2xl:text-[15px]">{food.strInstructions}</p>
+                                            {food.strInstructions.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                                            
 
                                             <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
@@ -326,7 +346,17 @@ const RandomRecipe = () => {
                                         <h3 className="text-lg pt-5">
                                               <strong>Instructions:</strong>
                                             </h3>
-                                            <p className="indent-10 text-justify px-5 text-xs 2xl:text-[15px]">{food.strInstructions}</p>
+                                            {food.strInstructions.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                                            
 
                                             <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>
@@ -419,7 +449,15 @@ const RandomRecipe = () => {
                                             <h3 className="text-lg pt-5">
                                               <strong>Instructions:</strong>
                                             </h3>
-                                            <p className="indent-10 text-justify px-5 text-xs 2xl:text-[15px]">{food.strInstructions}</p>
+                                            {food.strInstructions.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
 
                                             <h3 className="text-lg pt-5"><strong>Youtube:</strong></h3>
                                             <a href={food.strYoutube} target="_blank" rel="noreferrer" className="ml-5 hover:underline text-xs 2xl:text-[15px]">{food.strYoutube}</a>

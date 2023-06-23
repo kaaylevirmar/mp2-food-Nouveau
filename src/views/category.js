@@ -169,7 +169,17 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                               <h3 className="pt-5">
                                 <strong strong>Instructions:</strong>
                               </h3>
-                              <p className="indent-10 text-justify px-5">{categoryDiv.strInstructions}</p>
+                              {categoryDiv.strInstructions.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                             
 
                               <h3 className="pt-5">
                                 <strong>Youtube:</strong>

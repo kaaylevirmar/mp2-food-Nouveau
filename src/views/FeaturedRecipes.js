@@ -176,7 +176,17 @@ const SeeMoreDiv = (() =>{
                         <h3 className="pt-5">
                           <strong>Instructions:</strong>
                         </h3>
-                        <p className="text-justify px-5">{food.foodSummary}</p>
+                        {food.foodSummary.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                                            
                         <h3 className="pt-5"><strong>Image:</strong></h3>
                         <img className='w-52 h-48 ml-5 mt-3 rounded-lg'src={food.image} alt='Food'/>
                         
@@ -277,7 +287,17 @@ const SeeMoreDiv = (() =>{
                             
                                   <div>
                                     <h3 className="pt-5"><strong>Instructions:</strong></h3>
-                                    <p className=" text-justify px-5">{food.foodSummary}</p>
+                                    {food.foodSummary.split('. ').map((instruction, idx) => {
+                                             if (instruction.match(/^\d+\.\s/)) {
+                                            // Instruction starts with a number followed by a dot and a space
+                                            const instructionWithoutNumber = instruction.replace(/^\d+\.\s/, '');
+                                             return <li key={idx}>{instructionWithoutNumber}</li>;
+                                                 } else {
+                                             return <li key={idx}>{instruction}</li>;
+                                              }
+                                                 })}
+
+                                            
                                     <h3 className="pt-5"><strong>Image:</strong></h3>
                                     <img className='w-80 h-80 ml-5 mt-3 rounded-lg'src={food.image} alt='Food'/>
                                   
