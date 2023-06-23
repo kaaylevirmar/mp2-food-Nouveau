@@ -15,10 +15,7 @@ const Category = ({ category }) => {
 
 
 
-  // const closePopup = () => {
-  //   setShowInfo(false);
-  //   setSelectedFood(null);
-  // };
+
 
   const toggleCategoryFood = async (catStage) => {
     setShowInfo(!showInfo);
@@ -64,7 +61,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
       </div>
 
       {isOpen && 
-        <div className="fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo">
+        <div className="fixed bg-slate-950/50 w-full h-full rounded drop-shadow-lg randomInfo">
           <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
           <div className="flex justify-between text-white my-1">
                       Category
@@ -74,7 +71,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                       <img src={Closebutton} alt="close button" className="border rounded-full w-5 h-5 hover:border-black"/> 
                         </button>
             </div>
-          <div className="p-5 w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black">
+          <div className="w-full h-[94.8%] 2xl:w-full 2xl:h-[94.8%] bg-orange-200 pt-5 overflow-auto border border-black">
             <div className="flex justify-center">
               <div className="text-center">
                 <img src={category.strCategoryThumb} alt="categories" className="rounded-lg"/>
@@ -83,35 +80,36 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
               </div>
               
             </div>
-            <div className="flex justify-center">
-            <hr className="w-[1000px] text-center"></hr>
+            <div className="flex justify-center mb-5">
+              <hr className="w-[70%] text-center"></hr>
             </div>
-            <div className="flex justify-center">
-              <div className="flex flex-wrap mt-10 gap-10 justify-center border-8 bg-white border-double border-black w-[1050px] py-10">
+            <div className="flex justify-center w-full menuMainDiv">
+              <div className="flex flex-wrap md:gap-10 gap-4 2xl:gap-16 w-full 2xl:w-4/5 border-8 md:w-11/12 justify-center bg-white border-double border-black py-10 px-1 mb-10">
+                
                 {categoryStage.map(catStage =>(
             
-                  <div key={catStage.idMeal}>
+                  <div key={catStage.idMeal} className="h-60 md:h-72 2xl:h-80">
 
-                    <div className="h-80">
+                    
 
-                      <div className="text-center flex flex-col justify-center w-52">
-                        <img src={catStage.strMealThumb} alt="Modal images" className="rounded-lg border-2 border-black "/>
+                      <div className="text-center flex flex-col justify-center w-32 2xl:w-52 md:w-44 h-52 md:h-64 2xl:h-72">
+                        <img src={catStage.strMealThumb} alt="Modal images" className="w-32 h-32 2xl:w-52 2xl:h-52 md:w-44 md:h-44 rounded-lg border-2 border-black"/>
 
                         <div className="h-16 flex justify-center">
-                          <p className="font-bold text-sm mb-2 self-center text-center">{catStage.strMeal}</p>
+                          <div className="font-medium text-[11px] md:text-[13px] pt-2 2xl:text-sm mb-2 self-center text-center">{catStage.strMeal}</div>
                         </div>
                       </div>
                     
                       <div>
-                    <div className="justify-center flex" onClick={()=>toggleCategoryFood(catStage)}>
-                      <div  className="flex border-2 border-orange-500 text-orange-500 rounded-lg mb-2 hover:text-white hover:bg-orange-500">
-                        <button className=" px-1 font-bold text-xs 2xl:text-sm ">Read More</button>
-                        <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
+                        <div className="justify-center flex" >
+                          <div  className="flex border-2 border-orange-500 text-orange-500 rounded-lg mb-2    hover:text-white hover:bg-orange-500">
+                            <button className="px-1 font-bold text-xs 2xl:text-sm" onClick={()=>toggleCategoryFood(catStage)}>Read More</button>
+                            <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100    cursor-pointer rounded-r-md"/>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
   
-                    </div>
+                   
                     {showInfo && selectedFood === catStage && ( 
                       <div className='fixed bg-slate-950/50 w-screen h-screen rounded drop-shadow-lg randomInfo'>
                         <div className="px-1 border border-black 2xl:w-9/12 foodInfo sm:top-0 sm:left-0 2xl:top-[4%] 2xl:left-[12%] bg-black/80 rounded-md md:w-screen w-screen h-screen 2xl:h-[92%]">
@@ -197,6 +195,7 @@ const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.str
                     )}
                   </div>               
                 ))}
+              
               </div>
             </div>
           </div>

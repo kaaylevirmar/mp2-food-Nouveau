@@ -193,7 +193,7 @@ const AddRecipe = () => {
 
 
   return (
-    <div className='flex justify-center w-full bg-orange-200'>
+    <div className='flex justify-center w-full bg-orange-200/60'>
 
       <div className=' flex justify-center w-full '>
         <div className="w-full">
@@ -219,7 +219,7 @@ const AddRecipe = () => {
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
                 {nullFoodName && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
-                <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] required text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
+                <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
               </div>
             </div>
             {nullFoodName && 

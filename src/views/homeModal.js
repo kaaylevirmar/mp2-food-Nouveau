@@ -59,14 +59,9 @@ const Modal = ({ setOpenModal }) => {
       {!emailSend && (
         <div className='2xl:w-[35%] xl:w-[38%] lg:w-[38%] w-[80%] h-68 bg-white/100 text-black modalHomeEmail drop-shadow-2xl rounded border border-black/90'>
           <div className='p-2 m-2 2xl:px-20 xl:px-20 lg:px-8 border border-black flex justify-between items-center bg-orange-500 text-black font-bold modalLogoName'>
-            <img
-              src={logoImg}
-              alt='logo'
-              className='w-[20%] 2xl:w-20 lg:w-20 xl:w-20 '
-            />
-            <div className=''>
+            <img src={logoImg} alt='logo' className='w-[20%] 2xl:w-20 lg:w-20 xl:w-20 '/>
+            <div>
               <p className='text-3xl'>
-                {" "}
                 Food <span className='text-white'>Nouveau</span>
               </p>
             </div>
@@ -125,7 +120,7 @@ const Modal = ({ setOpenModal }) => {
       )}
       {emailSend && (
         <div className='flex justify-center items-center w-[60%] h-[80%] p-6 modalHomeSent'>
-          <div className='2xl:w-[50%] 2xl:h-[25%] / xl:w-[50%] xl:h-[23%] / lg:w-[60%] lg:h-[23%] / border flex items-center justify-center z-10 bg-white border-4 border-orange-600 rounded-lg thankYouModal'>
+          <div className='2xl:w-[50%] 2xl:h-[25%] / xl:w-[50%] xl:h-[23%] / lg:w-[60%] lg:h-[23%] / flex items-center justify-center  bg-white border-4 border-orange-600 rounded-lg thankYouModal'>
             <div className='text-black '>
               <p className='2xl:text-5xl / xl:text-4xl / lg:text-3xl font-bold text-orange-600'>
                 You're in!

@@ -117,9 +117,7 @@ const SeeMoreDiv = (() =>{
         <hr className='w-[80%]'></hr>
         </div>
         <h1 className='2xl:text-3xl md:text-2xl text-lg text-center font-bold sampleMenu pt-5'>Featured Recipes</h1>
-       
         <div className='rounded-md flex flex-wrap w-full md:gap-2 2xl:gap-10 justify-center gap-4 mt-10 '>
-         
             {randomItems.map((food) => (
               <div key={food.id} className='2xl:h-80 md:h-72 h-60 flex justify-center'>
                 <div>
@@ -223,7 +221,7 @@ const SeeMoreDiv = (() =>{
                       
                       </div>
                     </div>
-                    <div className="flex justify-center mb-10">
+                    <div className="flex justify-center mb-5">
                       <hr className="w-[70%] text-center"></hr>
                     </div>
                     <div className='flex justify-center w-full'>
@@ -240,16 +238,16 @@ const SeeMoreDiv = (() =>{
                               </div>
                        
                               <div className="text-center flex justify-center gap-3">
-                              <div className=" flex items-center" onClick={()=>toggleFood(food)}>
-                                <div  className="flex border-2 border-orange-500 text-orange-500 rounded-lg hover:text-white hover:bg-orange-500">
-                                  <button className=" px-1 font-bold sm:text-xs 2xl:text-sm text-[10px] ">Read More</button>
+                                <div className=" flex items-center" onClick={()=>toggleFood(food)}>
+                                  <div className="flex border-2 border-orange-500 text-orange-500 rounded-lg hover:text-white hover:bg-orange-500">
+                                    <button className=" px-1 font-bold sm:text-xs 2xl:text-sm text-[10px] ">Read More</button>
                                     <img src={GreaterThan} alt="Greater Than"   className="w-6 h-6 bg-orange-100 cursor-pointer rounded-r-md"/>
+                                  </div>
+                                </div>
+                                <div  className='border border-black flex items-center hover:bg-orange-300 border-2 rounded-lg border-orange-500'>
+                                  <img src={TranshIcon} alt='trash' className='w-6' onClick={() => deleteAlert(food)}/>
                                 </div>
                               </div>
-                              <div   className='border border-black flex items-center hover:bg-orange-300 border-2 rounded-lg border-orange-500'>
-                                <img src={TranshIcon} alt='trash' className='w-6' onClick={() => deleteAlert(food)}/>
-                              </div>
-                            </div>
 
                             {deleteThisFeatures && foodFilterDelete === food && (
                               <div className='w-full h-full border bg-black/20 text-white modalHome'>
