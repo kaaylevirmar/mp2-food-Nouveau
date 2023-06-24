@@ -31,7 +31,7 @@ const AddRecipe = () => {
   const [foodIngredients, setFoodIngredients] = useState("");
   const [imgUpload, setImgUpload] = useState("");
   const [foodSummary, setFoodSummary] = useState("");
-  const [addFoodName, setAddFoodName] = useState("");
+  
   // const [inputValidation,setInputValidation] = useState(false);
 
 
@@ -92,6 +92,7 @@ const AddRecipe = () => {
     }
   });
 
+    const[nullAllField, setNullAllField] = useState(false);
  
   const addList = async (event) => {
     
@@ -105,38 +106,277 @@ const AddRecipe = () => {
       document.getElementById("selectCategory").style.border = "2px solid red";
       document.getElementById("foodIngredients").style.border = "2px solid red";
       document.getElementById("foodSummary").style.border = "2px solid red";
-      document.getElementById("myfile").style.border = "2px solid red";
-
-
-
+      setImageValidation(true);
+      setNullAllField(true);
     }
     else if(foodName === "" ){
 
-      // setInputValidation(true);
-
-      // setTimeout(()=>{
-      //   setInputValidation(false);
-      // }, 2000)
-      setNullFoodName(true);
-    }else if(foodCountry ===""){
-      setNullFoodCountry(true);
-    }else if(foodCategory === "") {
-      setNullFoodCategory(true);
-    }else if(foodIngredients ===""){
-      setIngredientsValidation(true);
-      setTimeout(()=>{
-        setIngredientsValidation(false);
-      },2000)
-    }else if(foodSummary ===""){
-      setSummaryValidation(true);
-      setTimeout(()=>{
-        setSummaryValidation(false);
-      }, 2000)
-    }else if(imgUpload === ""){
-      setImageValidation(true);
-      setTimeout(()=>{
+      if(imgUpload ===""){
+        setImageValidation(true);
+      }else{
         setImageValidation(false);
-      }, 2000)
+      }
+
+      if(foodCategory ===""){
+        document.getElementById("selectCategory").style.border = "2px solid red";
+        setNullFoodCategory(true);
+      }else{
+        document.getElementById("selectCategory").style.border = "";
+        setNullFoodCategory(false);
+      }
+
+      if(foodIngredients ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setIngredientsValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setIngredientsValidation(false);
+      }
+
+      if(foodSummary ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setSummaryValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setSummaryValidation(false);
+      }
+
+      if(foodCountry ===""){
+        document.getElementById("countrySelect").style.border = "2px solid red";
+        setNullFoodCountry(true);
+      }else{
+        document.getElementById("countrySelect").style.border = "";
+        setNullFoodCountry(false);
+      }
+
+
+      setNullFoodName(true);
+      document.getElementById("foodName").style.border = "2px solid red";
+
+    
+    }else if(foodCountry ===""){
+
+      if(imgUpload ===""){
+        setImageValidation(true);
+      }else{
+        setImageValidation(false);
+      }
+      
+      if(foodName ===""){
+        document.getElementById("foodName").style.border = "2px solid red";
+        setNullFoodName(true);
+      } else{
+        document.getElementById("foodName").style.border = "";
+        setNullFoodName(false);
+      }
+
+      if(foodCategory ===""){
+        document.getElementById("selectCategory").style.border = "2px solid red";
+        setNullFoodCategory(true);
+      }else{
+        document.getElementById("selectCategory").style.border = "";
+        setNullFoodCategory(false);
+      }
+
+      if(foodIngredients ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setIngredientsValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setIngredientsValidation(false);
+      }
+
+      if(foodSummary ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setSummaryValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setSummaryValidation(false);
+      }
+
+      setNullFoodCountry(true);
+      document.getElementById("countrySelect").style.border = "2px solid red";
+
+
+
+    }else if(foodCategory === "") {
+
+      if(imgUpload ===""){
+        setImageValidation(true);
+      }else{
+        setImageValidation(false);
+      }
+      
+
+      if(foodName ===""){
+        document.getElementById("foodName").style.border = "2px solid red";
+        setNullFoodName(true);
+      } else {
+        document.getElementById("foodName").style.border = "";
+        setNullFoodName(false);
+      }
+      if(foodCountry ===""){
+        document.getElementById("countrySelect").style.border = "2px solid red";
+        setNullFoodCountry(true);
+      }else{
+        document.getElementById("countrySelect").style.border = "";
+        setNullFoodCountry(false);
+      }
+      if(foodIngredients ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setIngredientsValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setIngredientsValidation(false);
+      }
+
+      if(foodSummary ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setSummaryValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setSummaryValidation(false);
+      }
+     
+
+      setNullFoodCategory(true);
+      document.getElementById("selectCategory").style.border = "2px solid red";
+
+
+    }else if(foodIngredients ===""){
+
+      if(imgUpload ===""){
+        setImageValidation(true);
+      }else{
+        setImageValidation(false);
+      }
+
+      if(foodName ===""){
+        document.getElementById("foodName").style.border = "2px solid red";
+        setNullFoodName(true);
+      } else {
+        document.getElementById("foodName").style.border = "";
+        setNullFoodName(false);
+      }
+
+      if(foodCountry ===""){
+        document.getElementById("countrySelect").style.border = "2px solid red";
+        setNullFoodCountry(true);
+      }else{
+        document.getElementById("countrySelect").style.border = "";
+        setNullFoodCountry(false);
+      }
+
+      if(foodCategory ===""){
+        document.getElementById("selectCategory").style.border = "2px solid red";
+        setNullFoodCategory(true);
+      }else{
+        document.getElementById("selectCategory").style.border = "";
+        setNullFoodCategory(false);
+      }
+
+      if(foodSummary ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setSummaryValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setSummaryValidation(false);
+      }
+
+    
+      setIngredientsValidation(true);
+      document.getElementById("foodIngredients").style.border = "2px solid red";
+
+    }else if(foodSummary ===""){
+
+      if(imgUpload ===""){
+        setImageValidation(true);
+      }else{
+        setImageValidation(false);
+      }
+
+      if(foodName ===""){
+        document.getElementById("foodName").style.border = "2px solid red";
+        setNullFoodName(true);
+      } else {
+        document.getElementById("foodName").style.border = "";
+        setNullFoodName(false);
+      }
+
+      if(foodCountry ===""){
+        document.getElementById("countrySelect").style.border = "2px solid red";
+        setNullFoodCountry(true);
+      }else{
+        document.getElementById("countrySelect").style.border = "";
+        setNullFoodCountry(false);
+      }
+
+      if(foodCategory ===""){
+        document.getElementById("selectCategory").style.border = "2px solid red";
+        setNullFoodCategory(true);
+      }else{
+        document.getElementById("selectCategory").style.border = "";
+        setNullFoodCategory(false);
+      }
+
+      if(foodIngredients ===""){
+        document.getElementById("foodIngredients").style.border = "2px solid red";
+        setIngredientsValidation(true);
+      }else{
+        document.getElementById("foodIngredients").style.border = "";
+        setIngredientsValidation(false);
+      }
+
+
+
+      
+      setSummaryValidation(true);
+      document.getElementById("foodSummary").style.border = "2px solid red";
+     
+    }else if(imgUpload === ""){
+
+      if(foodName ===""){
+        document.getElementById("foodName").style.border = "2px solid red";
+        setNullFoodName(true);
+      } else {
+        document.getElementById("foodName").style.border = "";
+        setNullFoodName(false);
+      }
+
+      if(foodCountry ===""){
+        document.getElementById("countrySelect").style.border = "2px solid red";
+        setNullFoodCountry(true);
+      }else{
+        document.getElementById("countrySelect").style.border = "";
+        setNullFoodCountry(false);
+      }
+
+      if(foodCategory ===""){
+        document.getElementById("selectCategory").style.border = "2px solid red";
+        setNullFoodCategory(true);
+      }else{
+        document.getElementById("selectCategory").style.border = "";
+        setNullFoodCategory(false);
+      }
+
+      if(foodIngredients ===""){
+        document.getElementById("foodIngredients").style.border = "2px solid red";
+        setIngredientsValidation(true);
+      }else{
+        document.getElementById("foodIngredients").style.border = "";
+        setIngredientsValidation(false);
+      }
+
+
+      if(foodSummary ===""){
+        document.getElementById("foodSummary").style.border = "2px solid red";
+        setSummaryValidation(true);
+      }else{
+        document.getElementById("foodSummary").style.border = "";
+        setSummaryValidation(false);
+      }
+
+      setImageValidation(true);
     }
     else{
       
@@ -184,7 +424,7 @@ const AddRecipe = () => {
               setImgUpload("");
               setFoodSummary("");
               
-              setAddFoodName(foodName);
+              
               setAddSuccess(true);
               setTimeout(()=>{
                 setAddSuccess(false)
@@ -221,7 +461,9 @@ const AddRecipe = () => {
      
           <fieldset className="border p-2 lg:p-5 sm:p-4 border-black">
             <legend className="font-bold">Your recipe</legend>
+            {nullAllField && <p className="pb-2 text-sm text-center italic text-red-500 ">All fields are requird please fill up.</p>}
             <div>
+            
             <div className=' flex justify-between '>
               {/*-------------------- Food Name */}
               <div className="self-center">
@@ -230,7 +472,7 @@ const AddRecipe = () => {
               </label>
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
-                {nullFoodName && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+              
                 <input id='foodName' name='foodName'  className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] sm:w-[96%] text-sm md:text-base border border-zinc-300 rounded pl-1" value={foodName} onChange={handleSubmitfoodName} placeholder="Enter food name..."/>
               </div>
             </div>
@@ -247,7 +489,7 @@ const AddRecipe = () => {
               <label className='font-semibold text-sm md:base'>Country:</label>
               </div>
               <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
-              {nullFoodCountry && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+              
                 <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] md:w-[96%] required sm:w-[96%] w-[96%] text-sm md:text-base border border-zinc-300 rounded" value={foodCountry} name="foodCountry" id="countrySelect" onChange={handleSubmitfoodCountry}>
                   <option value='' >Select Country</option>
                   {getCountry.map((counrty) => (
@@ -270,7 +512,7 @@ const AddRecipe = () => {
                   <label className="font-semibold text-sm">Food Category:</label>
                 </div>
                 <div className="2xl:w-[66%] xl:w-[64.5%] lg:w-[64.5%] md:w-[64.5%] sm:w-[64.5%] w-[64.5%] flex justify-end">
-                  {nullFoodCategory && <span className="text-red-400 font-bold text-sm relatives mt-1 mr-1">*</span>}
+                
                   <select className="w-[100%] 2xl:w-[96%] lg:w-[96%] required md:w-[96%] sm:w-[96%] w-[96%] text-sm border border-zinc-300 rounded" value={foodCategory} name="foodCategory" onChange={handleSubmitfoodCategory} id="selectCategory" placeholder="Select cat">
                     <option value='' >Select Category</option>
                       {getCategory.map(setCategory =>(
@@ -281,7 +523,7 @@ const AddRecipe = () => {
               </div>
               {nullFoodCategory && 
               <div className="flex justify-end">
-                <span className="text-xs w-[64.5%] text-center text-red-400">--Please select Country--</span>
+                <span className="text-xs w-[64.5%] text-center text-red-400">--Please select Category--</span>
               </div>
               }   
             </div>
@@ -292,23 +534,38 @@ const AddRecipe = () => {
            
 
               <div className='flex-col pb-2 flex mt-2'>
+                <div className="flex  gap-2">
                 <label
                   htmlFor='foodIngredients'
                   className='mt-2 text-sm font-semibold'>
                   Food ingredients:
                 </label>
+                {ingredientsValidation && 
+              <div className="flex justify-end items-end">
+                <span className="text-xs text-center text-red-400">--Required--</span>
+              </div>
+              }  
+              </div>
                 <div className='mt-2 flex items-center'>
                   <textarea type='text' id='foodIngredients' name='foodIngredients' rows='4' className=" required 2xl:w-full w-[100%]  border border-zinc-300 rounded" onChange={handleSubmitfoodIngredients} value={foodIngredients}
                   />
                 </div>
+                
               </div>
 
 
             {/*-------------------------------Food Summary */}
             <div className='flex flex-col pb-2  mt-2'>
+              <div className="flex  gap-2">
               <label htmlFor='foodSummary' className='mt-2 text-sm font-semibold'>
                 Food Instruction:
               </label>
+              {summaryValidation && 
+              <div className="flex justify-end items-end">
+                <span className="text-xs text-center text-red-400">--Required--</span>
+              </div>
+              }  
+              </div>
               <div className='mt-2 flex items-center'>
                 <textarea type='text'  id='foodSummary' name='foodSummary' className="w-full border border-zinc-300 rounded" onChange={handleSummary} value={foodSummary} rows='4'/>
               </div>
@@ -324,9 +581,12 @@ const AddRecipe = () => {
               <div className="2xl:w-[80%] xl:w-[82%] lg:w-[80%] md:w-[83%] sm:w-[79%] w-[79%]">
                 <input type='file' name='myfile'  id='myfile' className=" required text-[12px] 2xl:text-sm xl:text-[12px] lg:text-[12px] md:text-[12px] sm:text-[12px] " onChange={handleImageUpload} />
               </div>
-
             </div>
-
+            {imageValidation && 
+              <div className="flex justify-center items-center">
+                <span className="text-xs text-center text-red-400">--requied--</span>
+              </div>
+              }  
 
             <div className='flex justify-center mt-5'>
               <button
@@ -351,24 +611,12 @@ const AddRecipe = () => {
             </div>
       )}
 
-{ingredientsValidation && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please input ingredients of {foodName}.</div>
-            </div>
-      )}
+
       
 
-      {summaryValidation && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please provide intructions of your {addFoodName} recipe.</div>
-            </div>
-      )}
+      
 
-{imageValidation && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'> Please upload image of your dish.</div>
-            </div>
-      )}
+
     </div>  
   );
 };
