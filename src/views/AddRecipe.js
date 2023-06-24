@@ -126,10 +126,10 @@ const AddRecipe = () => {
       }
 
       if(foodIngredients ===""){
-        document.getElementById("foodSummary").style.border = "2px solid red";
+        document.getElementById("foodIngredients").style.border = "2px solid red";
         setIngredientsValidation(true);
       }else{
-        document.getElementById("foodSummary").style.border = "";
+        document.getElementById("foodIngredients").style.border = "";
         setIngredientsValidation(false);
       }
 
@@ -179,10 +179,10 @@ const AddRecipe = () => {
       }
 
       if(foodIngredients ===""){
-        document.getElementById("foodSummary").style.border = "2px solid red";
+        document.getElementById("foodIngredients").style.border = "2px solid red";
         setIngredientsValidation(true);
       }else{
-        document.getElementById("foodSummary").style.border = "";
+        document.getElementById("foodIngredients").style.border = "";
         setIngredientsValidation(false);
       }
 
@@ -223,10 +223,10 @@ const AddRecipe = () => {
         setNullFoodCountry(false);
       }
       if(foodIngredients ===""){
-        document.getElementById("foodSummary").style.border = "2px solid red";
+        document.getElementById("foodIngredients").style.border = "2px solid red";
         setIngredientsValidation(true);
       }else{
-        document.getElementById("foodSummary").style.border = "";
+        document.getElementById("foodIngredients").style.border = "";
         setIngredientsValidation(false);
       }
 
@@ -284,8 +284,9 @@ const AddRecipe = () => {
       }
 
     
-      setIngredientsValidation(true);
+      
       document.getElementById("foodIngredients").style.border = "2px solid red";
+      setIngredientsValidation(true);
 
     }else if(foodSummary ===""){
 
@@ -584,7 +585,7 @@ const AddRecipe = () => {
             </div>
             {imageValidation && 
               <div className="flex justify-center items-center">
-                <span className="text-xs text-center text-red-400">--requied--</span>
+                <span className="text-xs text-center text-red-400">--Requied--</span>
               </div>
               }  
 
@@ -606,8 +607,8 @@ const AddRecipe = () => {
         </div>
       </div>
       {addSuccess && (
-            <div className='w-[1600px] h-screen border bg-white/60 text-white modalHome'>
-              <div className='w-96 h-68 bg-black/90 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully added {foodName}.</div>
+            <div className='w-full h-full border bg-black/20 text-white modalHome'>
+              <div className='w-[25%] h-68 bg-white text-orange-600 font-bold border-4 border-orange-600 p-6 modalHomeEmail drop-shadow-2xl rounded text-center'>You successfully added {foodName}.</div>
             </div>
       )}
 
